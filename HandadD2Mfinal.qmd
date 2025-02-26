@@ -1,0 +1,29 @@
+---
+title: "Chemical Conversations: Linguistic Markers of Authenticity, Emotionality and Fluency Under MDMA Influence"
+shorttitle: "Chemical Conversations"
+author:
+  - name: Deeksha Handa
+    corresponding: true
+    CNETID: 12459274
+    email: handad@uchicago.edu
+    affiliations:
+      - name: University of Chicago
+        department: Social Sciences Department
+        city: Chicago
+abstract: | 
+  MDMA (3,4-methylenedioxymethamphetamine) has been widely studied for its potential therapeutic effects, particularly in facilitating emotional openness and enhancing psychotherapy outcomes. Recent research suggests that MDMA alters speech patterns, increasing emotional expressivity and authenticity, which may play a crucial role in therapeutic settings. This study aims to examine the linguistic markers of authenticity, emotionality, and fluency under the influence of MDMA, particularly in the context of familiarity with a conversational partner. Using a secondary analysis of data collected in a controlled clinical setting, this study employs linguistic analysis techniques, including the Linguistic Inquiry and Word Count (LIWC) tool, to quantify changes in speech. Participants engaged in conversations under four conditions—MDMA vs. placebo and familiar vs. unfamiliar partner—to assess the interaction of drug effects and social context. We hypothesize that MDMA will increase authenticity and emotional expression while reducing fluency, with familiarity further amplifying emotional expressivity. Understanding these linguistic shifts can provide valuable insights into MDMA-assisted therapy (MDMA-AT), informing therapeutic approaches and practitioner training."
+keywords: 
+  - MDMA
+  - MDMA-AT
+  - linguistic
+  - LIWC
+author-note: |
+  This research was conducted as part of the Master of Arts Program in the Social Sciences (MAPSS) at the University of Chicago, under the guidance of faculty advisor Dr. Harriet de Wit and preceptor Dr. Amanda Ceniti. The study utilizes secondary data from a clinical MDMA study performed at the Human Behavioral Pharmacology Lab, with ethical approval granted by the University of Chicago. All participants provided informed consent, and ethical considerations regarding participant safety and confidentiality were strictly followed. 
+disclosures:
+  conflict-of-interest: "The author has no conflict of interest to declare."
+bibliography: "CCbibliography.bib"  # Ensure you have a BibTeX file in your directory
+format:
+  apaquarto-docx: default
+  apaquarto-html: default
+  apaquarto-pdf: default
+---

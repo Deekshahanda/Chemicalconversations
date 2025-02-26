@@ -1,5 +1,0 @@
----
-title: "HandadD2Mfinal"
-format: html
----
-
