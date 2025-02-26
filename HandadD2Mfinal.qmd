@@ -27,3 +27,25 @@ format:
   apaquarto-html: default
   apaquarto-pdf: default
 ---
+```{r setup, include=FALSE}
+# Load necessary packages
+library(knitr)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(stringr)
+library(forcats)
+
+# Set global knitr options
+knitr::opts_chunk$set(
+  echo = TRUE,        # Show R code
+  message = FALSE,    # Suppress messages
+  warning = FALSE,    # Suppress warnings
+  fig.width = 7,      # Set figure width
+  fig.height = 5,     # Set figure height
+  fig.align = "center",
+  cache = TRUE        # Enable caching
+)
+
+
