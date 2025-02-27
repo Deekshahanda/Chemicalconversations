@@ -419,6 +419,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 Optionally (for engagement points) write a brief reflection about your work on this project. You can use this space to answer the following questions, but feel free to ignore these questions and write about whatever you think is most important.
 
 - What was the most challenging aspect of this project?
+  *Structuring it to have each objective be useful and meaningful to the project* 
 - What was the most rewarding aspect of this project?
 - What would you do differently if you were to start over?
 - What did you learn from this project that you will carry forward to future projects?
