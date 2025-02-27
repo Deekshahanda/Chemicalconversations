@@ -36,18 +36,18 @@ Submission date: 26th February 2025
 
 Submission number (1-4): 1
 
-Project GitHub repository URL:
+Project GitHub repository URL:https://github.com/Deekshahanda/D2MChemicalconversations.git
 
-Filename of manuscript .qmd:
+Filename of manuscript .qmd: HandadD2Mfinal.qmd
 
-Filename of knitted .pdf:
+Filename of knitted .pdf: HandadD2Mfinal.pdf
 
 
 ## AI Statement
 
-Describe whether and how you used AI/LLMs when completing this project: 
+Describe whether and how you used AI/LLMs when completing this project: *I used google AI studio to assist with structuring my R Markdown document, debugging errors (e.g., duplicate chunk labels or syntax error), and ensuring my data processing met project objectives. AI also helped with best practices in data wrangling, visualization, and markdown formatting. However, all final decisions, code execution, and interpretations were my own. AI was used as a learning aid, not a substitute for my work.*
 
-Optionally (for engagement points) reflect on your use of AI:
+Optionally (for engagement points) reflect on your use of AI: AI does help with making a project less intimidating. *It's like a person there to answer all your questions without the fear of disturbing people or social anxiety. Additionally, it can help you find issues with your conceptual error, not by telling you so, but by reporiducing your mistakes in it's answer. However, there is a downside, if used blindly it can make mistakes and cost students grades they would've gotten without the AI.*
 
 
 
@@ -100,7 +100,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2.  Uses relative paths correctly
     3.  Does not have duplicate/redundant elements
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments: 
 
@@ -109,7 +109,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1.  Includes description of repo purpose, data use, research questions, etc.
     2.  Outlines the repo structure with file tree or similar
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -118,7 +118,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1.  All scripts run and all notebooks render if the repo is cloned to another location
     2.  .gitingore comprehensively excludes unnecessary, private, and very large files and are commented appropriately
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -127,7 +127,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1.  Used frequent, informative commit messages
     2.  Relies on document revisions rather than manually created new versions
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -140,7 +140,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
         2. When a reader opts-in to installing packages by uncommenting the code, it runs without errors 
     2. Uses more than one function to install/load/require packages (including those used in commented code)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
         
@@ -149,7 +149,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1. Uses all three types of operators
     2. Uses multiple operators in data transformation pipelines and/or inline R code
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -179,7 +179,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Writes out intermediate and/or final datasets in code chunks or sourced scripts
     3. Uses only relative paths that run without error when repo is cloned
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -189,7 +189,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses at least 1 `tidyr` function in a data transformation pipeline
     3. Combines `dplyr` and `tidyr` functions in a data transformation pipeline
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -297,7 +297,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses at least 2 citation forms (e.g., (Author, Year), Author (Year), etc.)
     3. May use `cite_r()` to cite R and R packages
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -309,7 +309,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4. May include R and R package citations with `cite_r()`
     5. May include references not cited in-text
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -322,7 +322,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3.  Follows the "1-chunk-1-thing" rule
     4.  Chunks are distributed throughout the manuscript, sensibly placed near the text they support
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments: 
         
@@ -333,7 +333,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Sets preferences/options in at least 1 code chunk
     4. Organizes setup chunks sensibly
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
         
@@ -368,7 +368,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     
     1. Includes all necessary metadata, output options, and formatting options necessary to render an APA styled document (or other specified style if appropriate for the project)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
         
@@ -409,7 +409,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. PDF renders without error and includes all text, tables, and figures
     4. No additional steps are needed (e.g., finding data, determining necessary packages to install and load, running unsourced scripts, correcting aboslute paths)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:        
    
