@@ -1,5 +1,5 @@
 ---
-title: "Chemical Conversations: Linguistic Markers of Authenticity, Emotionality and Fluency Under MDMA Influence"
+title: "Chemical Conversations: Linguistic Markers of Authenticity and Emotionality Under MDMA Influence"
 shorttitle: "Chemical Conversations"
 author:
   - name: Deeksha Handa
@@ -11,7 +11,7 @@ author:
         department: Social Sciences Department
         city: Chicago
 abstract: | 
-  MDMA (3,4-methylenedioxymethamphetamine) has been widely studied for its potential therapeutic effects, particularly in facilitating emotional openness and enhancing psychotherapy outcomes. Recent research suggests that MDMA alters speech patterns, increasing emotional expressivity and authenticity, which may play a crucial role in therapeutic settings. This study aims to examine the linguistic markers of authenticity, emotionality, and fluency under the influence of MDMA, particularly in the context of familiarity with a conversational partner. Using a secondary analysis of data collected in a controlled clinical setting, this study employs linguistic analysis techniques, including the Linguistic Inquiry and Word Count (LIWC) tool, to quantify changes in speech. Participants engaged in conversations under four conditions—MDMA vs. placebo and familiar vs. unfamiliar partner—to assess the interaction of drug effects and social context. We hypothesize that MDMA will increase authenticity and emotional expression while reducing fluency, with familiarity further amplifying emotional expressivity. Understanding these linguistic shifts can provide valuable insights into MDMA-assisted therapy (MDMA-AT), informing therapeutic approaches and practitioner training."
+  MDMA (3,4-methylenedioxymethamphetamine) has been widely studied for its potential therapeutic effects, particularly in facilitating emotional openness and enhancing psychotherapy outcomes. Recent research suggests that MDMA alters speech patterns, increasing emotional expressivity and authenticity, which may play a crucial role in therapeutic settings. This study aims to examine the linguistic markers of authenticity, emotionality, and fluency under the influence of MDMA, particularly in the context of familiarity with a conversational partner. Using a secondary analysis of data collected in a controlled clinical setting, this study employs linguistic analysis techniques, including the Linguistic Inquiry and Word Count (LIWC) tool, to quantify changes in speech. Participants engaged in conversations under four conditions—MDMA vs. placebo and familiar vs. unfamiliar partner—to assess the interaction of drug effects and social context. We hypothesize that MDMA will increase authenticity and emotional expression with familiarity further amplifying emotional expressivity. Understanding these linguistic shifts can provide valuable insights into MDMA-assisted therapy (MDMA-AT), informing therapeutic approaches and practitioner training."
 keywords: 
   - MDMA
   - MDMA-AT
@@ -37,6 +37,7 @@ library(ggplot2)
 library(stringr)
 library(forcats)
 library(citr)
+library(nlme)
 ```
 # Background
 3,4-methylenedioxymethamphetamine (MDMA) is a synthetic drug categorized as both a
@@ -106,22 +107,18 @@ nature of both MDMA and familiarity to the individual are pertinent here.
 ## Research Questions and Hypotheses
 This thesis primarily aims to identify linguistic markers of authenticity and emotionality
 under the influence of MDMA to understand the extent of MDMA-assisted therapy (MDMA-
-AT) in in addition to the modulating effects of partner familiarity. On a more exploratory level,
-this thesis also aims to identify fluency changes across conditions of MDMA and familiarity.
+AT) in in addition to the modulating effects of partner familiarity.
 To effectively examine these aims, it is essential to first define and contextualize the primary
 concepts relevant to this study: Authenticity and Emotionality. Authenticity refers to the degree
 to which an individual is monitoring their speech (LIWC — LIWC Analysis, n.d.), while
 emotionality is more about the actual words spoken and their score within LIWC.
 
 I hypothesize that MDMA will increase linguistic markers of authenticity and
-emotionality compared to placebo [@baggottetal_2015_intimate; @mollaetal_2023_druginduced] I expect to see
-higher authenticity and emotionality markers in conversations with familiar partners. Familiarity
+emotionality compared to placebo [@baggottetal_2015_intimate; @mollaetal_2023_druginduced] I expect to seehigher authenticity and emotionality markers in conversations with familiar partners. Familiarity
 can create a sense of comfort, making speech more natural and spontaneous (LIWC — LIWC
 Analysis, n.d.). On the other hand, when interacting with an unfamiliar partner, individuals may
 be more cautious about how they present themselves, leading to my hypothesis of a decrease in
 authenticity and emotionality markers as they self-monitor their language more closely.
-Additionally, I anticipate that language samples from MDMA sessions will show a
-reduction in fluency linguistic markers, compared to placebo sessions [@marroneetal_2010_amphetamine].
 
 # Methods
 This thesis project presents a secondary analysis of data from a clinical MDMA study
@@ -132,16 +129,14 @@ Molla and other members of the Lab.
 This study was approved by the University of Chicago. All participants provided
 informed consent to participate and were given a 250 dollars incentive after all sessions and 50 dollars if theydropped out before completion.
 
-## Participants.
+## Participants
 Healthy male and non-pregnant female healthy adults, aged 18 to 35, were
-recruited through posters, print and internet advertisements, and word-of-mouth referrals (n=45, f
-= 20; 44.5% and m= 25; 55.5%). Eligible candidates were those who reported prior psychedelic
+recruited through posters, print and internet advertisements, and word-of-mouth referrals (n=45, f = 20; 44.5% and m= 25; 55.5%). Eligible candidates were those who reported prior psychedelic
 use (1-40 occasions) and demonstrated verbal fluency in English. All participants passed
 comprehensive medical and psychiatric screenings, including a structured clinical interview,
 SCL-90R assessment, electrocardiogram, and physical examination. Major exclusion mental and
 physical criteria include previous treatment for drug or alcohol problems or current substance
-dependence [@americanpsychiatricassociation_2013_diagnostic]; past year panic disorder, history of psychotic or manic episodes [@americanpsychiatricassociation_2013_diagnostic]; cardiovascular illness or high blood
-pressure, abnormal EKG, and pregnancy or lactation (females).
+dependence [@americanpsychiatricassociation_2013_diagnostic]; past year panic disorder, history of psychotic or manic episodes [@americanpsychiatricassociation_2013_diagnostic]; cardiovascular illness or high bloodpressure, abnormal EKG, and pregnancy or lactation (females).
 
 ## Procedure
 Participants engaged in four laboratory sessions, conducted in random order: Receive
@@ -161,12 +156,78 @@ sample were collected) were obtained, and participants were tested for recent dr
 pregnancy. Then the participants spent 45 minutes in the same room as their partners with or
 without social interaction and filled out surveys. Following this they ingested MDMA (100 mg)
 or a placebo capsule, under a double-blind condition. Subjective measures were taken at every
-30-minute mark. At the peak drug effect (60 minutes), the confederate joined the participant for a
-15-minute test conversation (which was audio recorded), this conversation was about an
-important person in the participant’s life which they had already listed at the orientation. At the
-end of this conversation and then the entire session, additional plasma samples were collected. At
-the 240-minute mark, the participant was provided with a snack and allowed to leave at the
+30-minute mark. At the peak drug effect (60 minutes), the confederate joined the participant for a 15-minute test conversation (which was audio recorded), this conversation was about an
+important person in the participant’s life which they had already listed at the orientation. At the end of this conversation and then the entire session, additional plasma samples were collected. At the 240-minute mark, the participant was provided with a snack and allowed to leave at the
 experimenter’s discretion.
 
+## Data Cleaning and Outcome Measures
+The main source of data in this project are the audio recordings obtained through test
+conversations. These will be transcribed into text files using Happy Scribe and human review,
+with dialogues from the confederate removed. This clean text will be run through Linguistic
+Inquiry and Word Count (LIWC), which is designed to count words associated with specific
+psychological and grammatical dimensions to provide quantitative data [@chungpennebaker_2018_what].
 
+For perceived authenticity, LIWC's developers categorized it as the degree to which an
+individual self-monitors their speech. While high authenticity scores can be observed in
+impromptu conversations between friends, prewritten speeches tend to score lower (LIWC —
+LIWC Analysis, n.d.). This measure has been utilized by [@markowitzetal_2023_authentic] in studying the social benefits of authentic speech.
+
+For emotional content (emotionality), LIWC analyzes both positive and negative
+emotional expressions through specific word categories. Positive emotions are tracked through
+words like "good" and "love," while negative emotions are identified through terms such as
+"bad" and "hurt." The analysis further breaks down negative emotions into specific states,
+including anxiety (measured through words like "worry" and "nervous"), anger (identified by
+terms such as "mad" and "angry"), and sadness (tracked through words like "cry" and
+"disappoint").
+
+#Results
+
+Prior to running a multiple regression model on the data, novel variables are to be defined and categorized
+
+```{r load-data, include=FALSE}
+# Import data from CSV
+df <- read_csv("ChemicalConversationsdata.csv")
+
+# Preview data
+glimpse(df)
+```
+
+```{r data tranformation, include=FALSE}
+df <- df %>%
+  mutate(
+    across(c(emotion, Authenticity, emo_pos, emo_neg, emo_anx, emo_anger, emo_sad, focuspast, focuspresent, focusfuture), as.numeric),
+    across(c(Drugcondition, Familiarity, Filename, SubjectID, SessionCondition), as.factor)
+  )
+
+#Verify results
+head(df)
+```
+
+```{r mixed-models}
+#| echo: true
+
+# Fit the mixed-effects models
+mlfit1 <- lme(Authenticity ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit2 <- lme(emotion ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit3 <- lme(emo_pos ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit4 <- lme(emo_neg ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit5 <- lme(emo_anx ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit6 <- lme(emo_anger ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit7 <- lme(emo_sad ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit8 <- lme(focuspast ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit9 <- lme(focuspresent ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+mlfit10 <- lme(focusfuture ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
+
+# Summarize the models
+summary(mlfit1)
+summary(mlfit2)
+summary(mlfit3)
+summary(mlfit4)
+summary(mlfit5)
+summary(mlfit6)
+summary(mlfit7)
+summary(mlfit8)
+summary(mlfit9)
+summary(mlfit10)
+```
 
