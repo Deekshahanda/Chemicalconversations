@@ -24,17 +24,17 @@ To complete this assessment:
 
 ## Basic information
 
-Name:
+Name: Deeksha Handa
 
-CNetID:
+CNetID: 12459274
 
-Section:
+Section: 3 pm to 4:20 pm (Mondays and Friday)
 
-Research project title:
+Research project title: Chemical Conversations: Linguistic Markers of Authenticity and Emotionality Under MDMA Influence
 
-Submission date:
+Submission date: 26th February 2025
 
-Submission number (1-4):
+Submission number (1-4): 1
 
 Project GitHub repository URL:
 
