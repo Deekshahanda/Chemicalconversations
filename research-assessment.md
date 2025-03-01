@@ -102,7 +102,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
         -   [x] Objective attempt
         -   [ ] Objective met
-        -   Grader comments: 
+        -   Grader comments: Repo/file/folder names should be informative and relevant to content, not class context (e.g., nrdowling/infant-gesture not nrdowling/d2m-project; infant-gestures.qmd not d2m-final.qmd).
 
 2.  Maintain an informative and up-to-date README.md
 
@@ -111,7 +111,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
         -   [x] Objective attempt
         -   [ ] Objective met
-        -   Grader comments:
+        -   Grader comments: README does not contain project description or repo structure explanation/file tree
 
 3.  integrate a GitHub repo with an R studio project, including .gitignore file
 
@@ -119,7 +119,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2.  .gitingore comprehensively excludes unnecessary, private, and very large files and are commented appropriately
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 4.  effectively use version control
@@ -128,7 +128,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2.  Relies on document revisions rather than manually created new versions
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### R programming
@@ -141,7 +141,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses more than one function to install/load/require packages (including those used in commented code)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 6.  Use arithmetic, comparison, and logical operators
@@ -150,7 +150,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses multiple operators in data transformation pipelines and/or inline R code
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 7.  Parse and define functions and arguments
@@ -180,7 +180,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Uses only relative paths that run without error when repo is cloned
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 10. Use `dplyr` and `tidyr` functions to transform data
@@ -190,8 +190,8 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Combines `dplyr` and `tidyr` functions in a data transformation pipeline
 
         -   [x] Objective attempt
-        -   [ ] Objective met
-        -   Grader comments:
+        -   [x] Objective met
+        -   Grader comments: giving you the point here, but I really only see the 1, very short pipeline on line 196. You can do more with these packages and pipelines!
 
 11. Use `stringr` functions to work with string variables
 
@@ -298,8 +298,8 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. May use `cite_r()` to cite R and R packages
 
         -   [x] Objective attempt
-        -   [ ] Objective met
-        -   Grader comments:
+        -   [x] Objective met
+        -   Grader comments: you've got some funky formatting in a few citations that you should proof and correct in your final draft. There are also some non-bibtex references you should replace with bibtex so that the refs page is kept accurate (looking at line 172, for example)
 
 21. Render an APA7 references page from a .bib file
 
@@ -310,8 +310,8 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     5. May include references not cited in-text
 
         -   [x] Objective attempt
-        -   [ ] Objective met
-        -   Grader comments:
+        -   [x] Objective met
+        -   Grader comments: add the \clearpage latex line to start a new page
 
 ### Notebooks and code chunks
 
@@ -324,7 +324,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
         -   [x] Objective attempt
         -   [ ] Objective met
-        -   Grader comments: 
+        -   Grader comments: Always use Quarto comment-style chunk labels (e.g., #| label: load-data) and options (#| echo: FALSE). You may also want to break up some of your longer chunks into multiple, with the 1-chunk-1-thing rule in mind.
         
 23. Use code chunks to set up a quarto document
 
@@ -334,7 +334,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4. Organizes setup chunks sensibly
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 24. Render publication-quality tables, figures, and images from code chunks
@@ -369,7 +369,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1. Includes all necessary metadata, output options, and formatting options necessary to render an APA styled document (or other specified style if appropriate for the project)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 27. Use quarto R Markdown to compose an academic manuscript
@@ -411,7 +411,11 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
         -   [x] Objective attempt
         -   [ ] Objective met
-        -   Grader comments:        
+        -   Grader comments:
+            1.  APA7 - do not include a heading 1 for the introduction (e.g. no # Background)
+            2.  Proof your bibtex refs -- The very first one is definitely weird in a couple ways, there are a few where there is no space before the parenthesis, there's some all-caps going on...that kind of thign.
+            3.  Begin References section on a new page by adding the latex line `\clearpage` before the References heading. If you need to add content (like tables, appendices, etc.) after the references section, you should explicitly call the refs div (with the :::{#refs} fence syntax), then add the latex `\clearpage` to jump to a new page and put anything that should come afterwards at that point.'
+            4.  I know you're not attempting the points for the analyses and tables yet so I assume the raw code is just in-progress, but just as a reminder, be sure that there's no raw code or raw output in your final draft!
    
 
 ## Reflection (Optional)
@@ -442,8 +446,12 @@ Alternatively/additionally in mind some of the suggested ways to earn engagement
 
 All final projects are graded by Dr. Dowling. You will see your grade on Canvas separated into two categories: objective points and engagement points.
 
--   **Objective points:** #/30
--   **Engagement points:** #/10
--   **Total points:** #/40
+-   **Objective points:** 10/30
+-   **Engagement points:** 4/10
+-   **Total points:** 14/40
 
-**Comments:**
+**Comments:** 
+
+Sub1: Nice work, Deeksha! This sounds like a really cool project. It looks like everything you've been focusing on so far is coming together really nicely. There are a few points to fix up (I've noted above). I'm looking forward to seeing the final draft. :)
+
+
