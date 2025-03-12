@@ -22,3 +22,4 @@
 ├── 📄 .RData
 └── 📄 .Rhistory
 </pre>
+The important and relevatn files are not it any folders are are named chemicalconversations and the data used is names chemicalconversationsdata.csv
