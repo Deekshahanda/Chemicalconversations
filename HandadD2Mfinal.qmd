@@ -22,6 +22,7 @@ format:
   apaquarto-html: default
   apaquarto-pdf: default
 ---
+
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 # Load necessary packages
 library(knitr)
@@ -34,145 +35,50 @@ library(forcats)
 library(citr)
 library(nlme)
 ```
-3,4-methylenedioxymethamphetamine (MDMA) is a synthetic drug categorized as both a
-stimulant and a psychedelic, with effects comparable to methamphetamines [@_2024_mdma]. It is more commonly known as ecstasy (pill form) and molly (crystal form). After its classification as a Schedule I drug in 1985,unregulated research and any clinical use of MDMA to treat psychological disorders like Post-Traumatic Stress Disorder (PTSD) came to a sudden halt. Initial research and testing from the 1970s had shown MDMA’s potential as a less toxic,legal alternative to MDA (3,4-methylenedioxy-amphetamine) for assisting therapy seekers intheir emotional expression. Its clinical value centered on MDMA’s unique ability to help patients open-up emotionally, encouraging deeper thought and introspection without overwhelming psychedelic hallucinations. Leading therapists and scholars within the field believed that these effects would enable otherwise hard to articulate experiences to become easily expressible in therapeutic settings [@passie_2018_early].
+
+3,4-methylenedioxymethamphetamine (MDMA) is a synthetic drug categorized as both a stimulant and a psychedelic, with effects comparable to methamphetamines [@_2024_mdma]. It is more commonly known as ecstasy (pill form) and molly (crystal form). After its classification as a Schedule I drug in 1985,unregulated research and any clinical use of MDMA to treat psychological disorders like Post-Traumatic Stress Disorder (PTSD) came to a sudden halt. Initial research and testing from the 1970s had shown MDMA’s potential as a less toxic,legal alternative to MDA (3,4-methylenedioxy-amphetamine) for assisting therapy seekers intheir emotional expression. Its clinical value centered on MDMA’s unique ability to help patients open-up emotionally, encouraging deeper thought and introspection without overwhelming psychedelic hallucinations. Leading therapists and scholars within the field believed that these effects would enable otherwise hard to articulate experiences to become easily expressible in therapeutic settings [@passie_2018_early].
 
 # Recent Clinical Developments and Methodological Challenges
-In recent years, however, 11 Phase 2 and two Phase 3 trials of MDMA-Assisted
-Therapy (MDMA-AT) for PTSD treatment have been approved and conducted. Notably, a
-Phase 3 trial from 2021 involved participants receiving three MDMA doses over an 18-week
-period along with manualized therapy, with significant improvement compared to placebo: over
-67% of participants no longer met the diagnostic threshold for PTSD across a broad range of
-symptoms, compared to 32% in the placebo group [@mitchelletal_2021_mdmaassisted]. Additional evidence
-suggests that a considerable proportion of self-reported substance users support MDMA research
-(68.1%), believe in the potential of MDMA-assisted therapy to help with alcohol and drug abuse
-Chemical Conversations 2 disorders and it’s common comorbidity, PTSD (70.1%) and would be willing to participate if eligible (58.8%), across diverse racial and ethnic groups— a previous concern in the context of
-equitable distribution of MDMA-assisted therapy, given the disproportionate extent to which
-substance abuse (and it’s comorbidities) affect minorities [@jones_2023_perspectives].
-Even with these advances, the road to MDMA-AT's broad approval and adoption is long
-and complex. This is due to several concerns in the community, such as the potential for abuse
-and the investment required to train therapists with proper protocols [@maderoalvarez_2023_premise].
-Additionally, there is a concern that persistent use of MDMA could lead to decreased cognitive
-function, which is a significant argument against MDMA-AT [@wagneretal_2015_learning]. A gaping
-issue here is that it is almost impossible to construct a double-blind between placebo and MDMA
-conditions, given the obvious external effects of MDMA, which could impact the results. This
-exact rationale was behind the recent rejection of MDMA as a form or aid of treatment
-[@kupferschmidt_2024_fda]. There are definite methodological advances that need to be put in place
-which accurately weight the risk and benefits of such therapeutic treatments including
-appropriate training and preparation for both the therapist and the individual receiving MDMA.
-Wider application for such methods will require research and analysis that cover current gaps
-about our knowledge of MDMA and the experience it induces, especially in a clinical setting
-with a practitioner.
+
+In recent years, however, 11 Phase 2 and two Phase 3 trials of MDMA-Assisted Therapy (MDMA-AT) for PTSD treatment have been approved and conducted. Notably, a Phase 3 trial from 2021 involved participants receiving three MDMA doses over an 18-week period along with manualized therapy, with significant improvement compared to placebo: over 67% of participants no longer met the diagnostic threshold for PTSD across a broad range of symptoms, compared to 32% in the placebo group [@mitchelletal_2021_mdmaassisted]. Additional evidence suggests that a considerable proportion of self-reported substance users support MDMA research (68.1%), believe in the potential of MDMA-assisted therapy to help with alcohol and drug abuse Chemical Conversations 2 disorders and it’s common comorbidity, PTSD (70.1%) and would be willing to participate if eligible (58.8%), across diverse racial and ethnic groups— a previous concern in the context of equitable distribution of MDMA-assisted therapy, given the disproportionate extent to which substance abuse (and it’s comorbidities) affect minorities [@jones_2023_perspectives]. Even with these advances, the road to MDMA-AT's broad approval and adoption is long and complex. This is due to several concerns in the community, such as the potential for abuse and the investment required to train therapists with proper protocols [@maderoalvarez_2023_premise]. Additionally, there is a concern that persistent use of MDMA could lead to decreased cognitive function, which is a significant argument against MDMA-AT [@wagneretal_2015_learning]. A gaping issue here is that it is almost impossible to construct a double-blind between placebo and MDMA conditions, given the obvious external effects of MDMA, which could impact the results. This exact rationale was behind the recent rejection of MDMA as a form or aid of treatment [@kupferschmidt_2024_fda]. There are definite methodological advances that need to be put in place which accurately weight the risk and benefits of such therapeutic treatments including appropriate training and preparation for both the therapist and the individual receiving MDMA. Wider application for such methods will require research and analysis that cover current gaps about our knowledge of MDMA and the experience it induces, especially in a clinical setting with a practitioner.
 
 ## Research Gap and Thesis formation
-One such analysis of interest is observing and understanding overt behavioral changes
-under MDMA influence, more specifically linguistic implications, to potentially inform the
-construction of a therapeutic aid. Since a critical part of PTSD therapy, like most others, involves
-discussing traumatic experiences and articulating emotions, understanding MDMA’s effects on
-speech could deepen our knowledge of its impact beyond general emotional facilitation.
-Understanding these changes could help practitioners facilitate individuals who find it difficult to
-connect with or express emotions effectively in clinical settings.
-Some insights on this topic can be found in a study by @baggottetal_2015_intimate, which
-demonstrated that MDMA alters speech content, particularly by increasing the use of social and
-emotional words during discussions about intimate relationships. The study found that MDMA
-enhances both positive and negative emotional language, using a software that assesses semantic
-content, the LIWC (Linguistic Inquiry and Word Count) software [@chungpennebaker_2018_what]
-potentially helping patients in therapy communicate complex emotions more effectively. These
-findings align with anecdotal reports of MDMA encouraging emotional disclosure and suggest
-that MDMA may help patients develop a language of emotional insight essential for successful
-trauma processing in therapy [@baggottetal_2015_intimate].
-Further knowledge into MDMA’s effects on speech are provided in a study by @marroneetal_2010_amphetamine, which compared MDMA (dose) and methamphetamine (dose) on verbal fluency
-and coherence. This within-participant study showed that while methamphetamine increased
-speech fluency (ability to accurately string words together) and coherence (logical and
-consistent), MDMA tended to decrease fluency and impacted participants' self-rated
-concentration. Movie descriptions following MDMA were self-rated as less coherent than those
-after methamphetamine, suggesting that MDMA’s effects on language may differ significantly
-from other amphetamines.
-While these studies examined MDMA's effects on linguistic fluency and emotional
-language in addition to scraping the surface with authenticity, they did so in a setting with no
-direct interaction with the participant. This thesis proposes an added variable of familiarity and
-unfamiliarity to an individual in the know of the procedure, known as the confederate. Including
-this variable provides a novel perspective on the research of MDMA, it may help decipher if
-presence and interaction with an individual (or practitioner) can encourage the participant even
-further to elucidate their emotional state. This addition may not only help measure the viability
-of the therapeutic procedure but also inform policies and training for it. Questions of the additive
-nature of both MDMA and familiarity to the individual are pertinent here.
+
+One such analysis of interest is observing and understanding overt behavioral changes under MDMA influence, more specifically linguistic implications, to potentially inform the construction of a therapeutic aid. Since a critical part of PTSD therapy, like most others, involves discussing traumatic experiences and articulating emotions, understanding MDMA’s effects on speech could deepen our knowledge of its impact beyond general emotional facilitation. Understanding these changes could help practitioners facilitate individuals who find it difficult to connect with or express emotions effectively in clinical settings. Some insights on this topic can be found in a study by @baggottetal_2015_intimate, which demonstrated that MDMA alters speech content, particularly by increasing the use of social and emotional words during discussions about intimate relationships. The study found that MDMA enhances both positive and negative emotional language, using a software that assesses semantic content, the LIWC (Linguistic Inquiry and Word Count) software [@chungpennebaker_2018_what] potentially helping patients in therapy communicate complex emotions more effectively. These findings align with anecdotal reports of MDMA encouraging emotional disclosure and suggest that MDMA may help patients develop a language of emotional insight essential for successful trauma processing in therapy [@baggottetal_2015_intimate]. Further knowledge into MDMA’s effects on speech are provided in a study by @marroneetal_2010_amphetamine, which compared MDMA (dose) and methamphetamine (dose) on verbal fluency and coherence. This within-participant study showed that while methamphetamine increased speech fluency (ability to accurately string words together) and coherence (logical and consistent), MDMA tended to decrease fluency and impacted participants' self-rated concentration. Movie descriptions following MDMA were self-rated as less coherent than those after methamphetamine, suggesting that MDMA’s effects on language may differ significantly from other amphetamines. While these studies examined MDMA's effects on linguistic fluency and emotional language in addition to scraping the surface with authenticity, they did so in a setting with no direct interaction with the participant. This thesis proposes an added variable of familiarity and unfamiliarity to an individual in the know of the procedure, known as the confederate. Including this variable provides a novel perspective on the research of MDMA, it may help decipher if presence and interaction with an individual (or practitioner) can encourage the participant even further to elucidate their emotional state. This addition may not only help measure the viability of the therapeutic procedure but also inform policies and training for it. Questions of the additive nature of both MDMA and familiarity to the individual are pertinent here.
 
 ## Research Questions and Hypotheses
-This thesis primarily aims to identify linguistic markers of authenticity and emotionality
-under the influence of MDMA to understand the extent of MDMA-assisted therapy (MDMA-
-AT) in in addition to the modulating effects of partner familiarity.
-To effectively examine these aims, it is essential to first define and contextualize the primary
-concepts relevant to this study: Authenticity and Emotionality. Authenticity refers to the degree
-to which an individual is monitoring their speech (LIWC — LIWC Analysis, n.d.), while
-emotionality is more about the actual words spoken and their score within LIWC.
 
-I hypothesize that MDMA will increase linguistic markers of authenticity and
-emotionality compared to placebo [@baggottetal_2015_intimate; @mollaetal_2023_druginduced] I expect to seehigher authenticity and emotionality markers in conversations with familiar partners. Familiarity
-can create a sense of comfort, making speech more natural and spontaneous (LIWC — LIWC
-Analysis, n.d.). On the other hand, when interacting with an unfamiliar partner, individuals may
-be more cautious about how they present themselves, leading to my hypothesis of a decrease in
-authenticity and emotionality markers as they self-monitor their language more closely.
+This thesis primarily aims to identify linguistic markers of authenticity and emotionality under the influence of MDMA to understand the extent of MDMA-assisted therapy (MDMA- AT) in in addition to the modulating effects of partner familiarity. To effectively examine these aims, it is essential to first define and contextualize the primary concepts relevant to this study: Authenticity and Emotionality. Authenticity refers to the degree to which an individual is monitoring their speech (LIWC — LIWC Analysis, n.d.), while emotionality is more about the actual words spoken and their score within LIWC.
+
+I hypothesize that MDMA will increase linguistic markers of authenticity and emotionality compared to placebo [@baggottetal_2015_intimate; @mollaetal_2023_druginduced] I expect to seehigher authenticity and emotionality markers in conversations with familiar partners. Familiarity can create a sense of comfort, making speech more natural and spontaneous (LIWC — LIWC Analysis, n.d.). On the other hand, when interacting with an unfamiliar partner, individuals may be more cautious about how they present themselves, leading to my hypothesis of a decrease in authenticity and emotionality markers as they self-monitor their language more closely.
 
 # Methods
-This thesis project presents a secondary analysis of data from a clinical MDMA study
-performed at the Human Behavioral Pharmacology Lab by P.I. Harriet de Wit, post-doc Hanna
-Molla and other members of the Lab.
+
+This thesis project presents a secondary analysis of data from a clinical MDMA study performed at the Human Behavioral Pharmacology Lab by P.I. Harriet de Wit, post-doc Hanna Molla and other members of the Lab.
 
 ## Ethical Approval
-This study was approved by the University of Chicago. All participants provided
-informed consent to participate and were given a 250 dollars incentive after all sessions and 50 dollars if theydropped out before completion.
+
+This study was approved by the University of Chicago. All participants provided informed consent to participate and were given a 250 dollars incentive after all sessions and 50 dollars if theydropped out before completion.
 
 ## Participants
-Healthy male and non-pregnant female healthy adults, aged 18 to 35, were
-recruited through posters, print and internet advertisements, and word-of-mouth referrals (n=45, f = 20; 44.5% and m= 25; 55.5%). Eligible candidates were those who reported prior psychedelic
-use (1-40 occasions) and demonstrated verbal fluency in English. All participants passed
-comprehensive medical and psychiatric screenings, including a structured clinical interview,
-SCL-90R assessment, electrocardiogram, and physical examination. Major exclusion mental and
-physical criteria include previous treatment for drug or alcohol problems or current substance
-dependence [@americanpsychiatricassociation_2013_diagnostic]; past year panic disorder, history of psychotic or manic episodes [@americanpsychiatricassociation_2013_diagnostic]; cardiovascular illness or high bloodpressure, abnormal EKG, and pregnancy or lactation (females).
+
+Healthy male and non-pregnant female healthy adults, aged 18 to 35, were recruited through posters, print and internet advertisements, and word-of-mouth referrals (n=45, f = 20; 44.5% and m= 25; 55.5%). Eligible candidates were those who reported prior psychedelic use (1-40 occasions) and demonstrated verbal fluency in English. All participants passed comprehensive medical and psychiatric screenings, including a structured clinical interview, SCL-90R assessment, electrocardiogram, and physical examination. Major exclusion mental and physical criteria include previous treatment for drug or alcohol problems or current substance dependence [@americanpsychiatricassociation_2013_diagnostic]; past year panic disorder, history of psychotic or manic episodes [@americanpsychiatricassociation_2013_diagnostic]; cardiovascular illness or high bloodpressure, abnormal EKG, and pregnancy or lactation (females).
 
 ## Procedure
-Participants engaged in four laboratory sessions, conducted in random order: Receive
-MDMA (100 mg) and engage in a conversation with an Unfamiliar partner (MU), Receive
-placebo and engage in a conversation with an Unfamiliar partner (PU), Receive MDMA (100
-mg) and engage in a conversation with a Familiar partner (MF), and Receive placebo and engage
-in a conversation with a Familiar partner (PF).
 
-The partners were strangers before each session, but before participants received drug,
-familiarity was established with two of the partners with a bonding conversation procedure
-[@aronetal_1992_inclusion; @aronetal_1997_experimental]. One hour before ingesting the drug or placebo,
-participants either engaged in a 45-min conversation to establish familiarity with a partner
-(familiar sessions), or they spent time in a room without talking (Unfamiliar sessions).
+Participants engaged in four laboratory sessions, conducted in random order: Receive MDMA (100 mg) and engage in a conversation with an Unfamiliar partner (MU), Receive placebo and engage in a conversation with an Unfamiliar partner (PU), Receive MDMA (100 mg) and engage in a conversation with a Familiar partner (MF), and Receive placebo and engage in a conversation with a Familiar partner (PF).
 
-On each session, baseline measures of heart rate, blood pressure, and oxytocin (plasma
-sample were collected) were obtained, and participants were tested for recent drug use and
-pregnancy. Then the participants spent 45 minutes in the same room as their partners with or
-without social interaction and filled out surveys. Following this they ingested MDMA (100 mg)
-or a placebo capsule, under a double-blind condition. Subjective measures were taken at every
-30-minute mark. At the peak drug effect (60 minutes), the confederate joined the participant for a 15-minute test conversation (which was audio recorded), this conversation was about an
-important person in the participant’s life which they had already listed at the orientation. At the end of this conversation and then the entire session, additional plasma samples were collected. At the 240-minute mark, the participant was provided with a snack and allowed to leave at the
-experimenter’s discretion.
+The partners were strangers before each session, but before participants received drug, familiarity was established with two of the partners with a bonding conversation procedure [@aronetal_1992_inclusion; @aronetal_1997_experimental]. One hour before ingesting the drug or placebo, participants either engaged in a 45-min conversation to establish familiarity with a partner (familiar sessions), or they spent time in a room without talking (Unfamiliar sessions).
+
+On each session, baseline measures of heart rate, blood pressure, and oxytocin (plasma sample were collected) were obtained, and participants were tested for recent drug use and pregnancy. Then the participants spent 45 minutes in the same room as their partners with or without social interaction and filled out surveys. Following this they ingested MDMA (100 mg) or a placebo capsule, under a double-blind condition. Subjective measures were taken at every 30-minute mark. At the peak drug effect (60 minutes), the confederate joined the participant for a 15-minute test conversation (which was audio recorded), this conversation was about an important person in the participant’s life which they had already listed at the orientation. At the end of this conversation and then the entire session, additional plasma samples were collected. At the 240-minute mark, the participant was provided with a snack and allowed to leave at the experimenter’s discretion.
 
 ## Data Cleaning and Outcome Measures
-The main source of data in this project are the audio recordings obtained through test
-conversations. These will be transcribed into text files using Happy Scribe and human review,
-with dialogues from the confederate removed. This clean text will be run through Linguistic
-Inquiry and Word Count (LIWC), which is designed to count words associated with specific
-psychological and grammatical dimensions to provide quantitative data [@chungpennebaker_2018_what].
 
-For perceived authenticity, LIWC's developers categorized it as the degree to which an
-individual self-monitors their speech. While high authenticity scores can be observed in
-impromptu conversations between friends, prewritten speeches tend to score lower (LIWC —
-LIWC Analysis, n.d.). This measure has been utilized by [@markowitzetal_2023_authentic] in studying the social benefits of authentic speech.
+The main source of data in this project are the audio recordings obtained through test conversations. These will be transcribed into text files using Happy Scribe and human review, with dialogues from the confederate removed. This clean text will be run through Linguistic Inquiry and Word Count (LIWC), which is designed to count words associated with specific psychological and grammatical dimensions to provide quantitative data [@chungpennebaker_2018_what].
 
-For emotional content (emotionality), LIWC analyzes both positive and negative
-emotional expressions through specific word categories. Positive emotions are tracked through
-words like "good" and "love," while negative emotions are identified through terms such as
-"bad" and "hurt." The analysis further breaks down negative emotions into specific states,
-including anxiety (measured through words like "worry" and "nervous"), anger (identified by
-terms such as "mad" and "angry"), and sadness (tracked through words like "cry" and
-"disappoint").
+For perceived authenticity, LIWC's developers categorized it as the degree to which an individual self-monitors their speech. While high authenticity scores can be observed in impromptu conversations between friends, prewritten speeches tend to score lower (LIWC — LIWC Analysis, n.d.). This measure has been utilized by [@markowitzetal_2023_authentic] in studying the social benefits of authentic speech.
+
+For emotional content (emotionality), LIWC analyzes both positive and negative emotional expressions through specific word categories. Positive emotions are tracked through words like "good" and "love," while negative emotions are identified through terms such as "bad" and "hurt." The analysis further breaks down negative emotions into specific states, including anxiety (measured through words like "worry" and "nervous"), anger (identified by terms such as "mad" and "angry"), and sadness (tracked through words like "cry" and "disappoint").
 
 #Results
 
@@ -224,5 +130,3 @@ summary(mlfit8)
 summary(mlfit9)
 summary(mlfit10)
 ```
-
-
