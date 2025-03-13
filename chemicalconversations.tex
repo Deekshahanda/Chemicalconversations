@@ -64,46 +64,6 @@
 
 
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -564,393 +524,99 @@ specific states, including anxiety (measured through words like
 and ``angry''), and sadness (tracked through words like ``cry'' and
 ``disappoint'').
 
-\#Results
+\section{Results}\label{results}
 
-Prior to running a multiple regression model on the data, novel
-variables are to be defined and categorized
+\subsection{Data Cleaning}\label{data-cleaning}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Fit the mixed{-}effects models}
-\NormalTok{mlfit1 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(Authenticity }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit2 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emotion }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit3 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emo\_pos }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit4 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emo\_neg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit5 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emo\_anx }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit6 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emo\_anger }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit7 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(emo\_sad }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit8 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(focuspast }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit9 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(focuspresent }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
-\NormalTok{mlfit10 }\OtherTok{\textless{}{-}} \FunctionTok{lme}\NormalTok{(focusfuture }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Familiarity }\SpecialCharTok{*}\NormalTok{ Drugcondition , }\AttributeTok{random =}  \SpecialCharTok{\textasciitilde{}} \DecValTok{1} \SpecialCharTok{|}\NormalTok{ SubjectID, }\AttributeTok{data =}\NormalTok{ df, }\AttributeTok{method =} \StringTok{"ML"}\NormalTok{)}
+Data preprocessing involved several steps to prepare the data for
+analysis. First, string manipulation was used to extract the session
+number from the \texttt{Filename} variable and create a more readable
+Session label (e.g., `Session 1'). Next, the \texttt{Familiarity}
+variable was refined using factor manipulation techniques. Levels were
+reordered to set `Familiar' as the baseline, and less frequent levels
+were grouped to simplify subsequent analyses. Finally, the
+\texttt{Drugcondition} variable was recoded into a numeric
+\texttt{Drugcondition\_coded} variable for statistical modeling
 
-\CommentTok{\# Summarize the models}
-\FunctionTok{summary}\NormalTok{(mlfit1)}
-\end{Highlighting}
-\end{Shaded}
+\subsection{Descriptive Statistics}\label{descriptive-statistics}
 
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  1143.656 1160.862 -565.8282
+We began by examining the basic characteristics of our data using
+descriptive statistics. Mean Authenticity and Emotion scores were
+calculated overall. A custom \texttt{calculate\_mean} function was
+employed to ensure accurate handling of potential missing data during
+these calculations and to output those results for further tabulation
+and further analysis. This approach, implemented downstream of variable
+standardization, was designed to minimize risks stemming from type-based
+mismatches as downstream calculations are computed and ultimately
+informs appropriate test. To facilitate a comprehensive examination
+across experimental groups, these key metrics were compared across drug
+conditions and group size which was also constructed for sample quality,
+into \textbf{Table 1}.
 
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:    11.11839 16.50317
+\begin{table}
 
-Fixed effects:  Authenticity ~ Familiarity * Drugcondition 
-                                     Value Std.Error DF   t-value p-value
-(Intercept)                       59.46309  3.563337 94 16.687472  0.0000
-FamiliarityU                      -0.02975  4.165045 94 -0.007143  0.9943
-Drugconditionplacebo               2.16123  4.203411 94  0.514161  0.6083
-FamiliarityU:Drugconditionplacebo  1.56938  5.890587 94  0.266421  0.7905
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.595              
-Drugconditionplacebo              -0.590  0.505       
-FamiliarityU:Drugconditionplacebo  0.421 -0.707 -0.714
+{\caption{{Discriptive Statistics}{\label{tbl-descp}}}
+\vspace{-20pt}}
 
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.0936116 -0.7325942  0.2158792  0.6743910  2.0539500 
+\begin{longtable}[]{@{}lrlrr@{}}
+\toprule\noalign{}
+Drug condition & Frequency & Variable & Mean & Standard Deviation \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+MDMA & 65 & Authenticity & 59.598308 & 20.9559477 \\
+MDMA & 65 & Emotion & 1.333692 & 0.5061453 \\
+placebo & 65 & Authenticity & 62.631692 & 19.0450668 \\
+placebo & 65 & Emotion & 1.166923 & 0.4305517 \\
+\end{longtable}
 
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
+\end{table}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit2)}
-\end{Highlighting}
-\end{Shaded}
+\vspace{-2em}
 
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  170.5056 187.7108 -79.25281
+\begin{figure}
 
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.2398419 0.3977035
+\caption{\label{fig-1}Scatter plot of Authenticity vs Familiarity by
+Drug Condition}
 
-Fixed effects:  emotion ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        1.2852191 0.08321683 94 15.444221  0.0000
-FamiliarityU                       0.0969021 0.10035774 94  0.965567  0.3367
-Drugconditionplacebo              -0.1337020 0.10126730 94 -1.320288  0.1899
-FamiliarityU:Drugconditionplacebo -0.0623586 0.14193423 94 -0.439349  0.6614
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.614              
-Drugconditionplacebo              -0.608  0.505       
-FamiliarityU:Drugconditionplacebo  0.434 -0.707 -0.713
+\centering{
 
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.2649974 -0.6296680 -0.1406118  0.4929599  2.8623365 
+\pandocbounded{\includegraphics[keepaspectratio]{chemicalconversations_files/figure-pdf/fig-1-1.pdf}}
 
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
+}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit3)}
-\end{Highlighting}
-\end{Shaded}
+\end{figure}%
 
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  93.82333 111.0285 -40.91167
+\begin{figure}
 
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.1716005 0.2981563
+\caption{\label{fig-2}Mean Emotion Score by Drug Condition and
+Familiarity}
 
-Fixed effects:  emo_pos ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        0.7954449 0.06165480 94 12.901590  0.0000
-FamiliarityU                       0.0878884 0.07523320 94  1.168213  0.2457
-Drugconditionplacebo              -0.0670418 0.07591031 94 -0.883171  0.3794
-FamiliarityU:Drugconditionplacebo -0.0375037 0.10640075 94 -0.352476  0.7253
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.621              
-Drugconditionplacebo              -0.616  0.505       
-FamiliarityU:Drugconditionplacebo  0.439 -0.707 -0.713
+\centering{
 
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.5804930 -0.6422927 -0.1166950  0.5245222  2.8454249 
+\pandocbounded{\includegraphics[keepaspectratio]{chemicalconversations_files/figure-pdf/fig-2-1.pdf}}
 
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
+}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit4)}
-\end{Highlighting}
-\end{Shaded}
+\end{figure}%
 
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  29.24162 46.44683 -8.620809
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.1366629 0.2317612
-
-Fixed effects:  emo_neg ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        0.3639451 0.04821501 94  7.548378  0.0000
-FamiliarityU                       0.0021155 0.05848166 94  0.036174  0.9712
-Drugconditionplacebo              -0.0689389 0.05900992 94 -1.168260  0.2457
-FamiliarityU:Drugconditionplacebo -0.0034853 0.08270950 94 -0.042140  0.9665
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.617              
-Drugconditionplacebo              -0.612  0.505       
-FamiliarityU:Drugconditionplacebo  0.437 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.8351745 -0.5814421 -0.1782547  0.4478096  3.7413607 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit5)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC       BIC   logLik
-  -256.6664 -239.4612 134.3332
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.03374981 0.08054363
-
-Fixed effects:  emo_anx ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.08193151 0.01566859 94  5.229030  0.0000
-FamiliarityU                       0.00534121 0.02031544 94  0.262914  0.7932
-Drugconditionplacebo              -0.01253720 0.02048988 94 -0.611873  0.5421
-FamiliarityU:Drugconditionplacebo -0.01322038 0.02873126 94 -0.460139  0.6465
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.659              
-Drugconditionplacebo              -0.654  0.504       
-FamiliarityU:Drugconditionplacebo  0.466 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.2498753 -0.6356720 -0.2672938  0.3357720  4.6370664 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit6)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC       BIC   logLik
-  -264.5747 -247.3695 138.2874
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.02066188 0.08114238
-
-Fixed effects:  emo_anger ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.06750998 0.01503267 94  4.490884  0.0000
-FamiliarityU                      -0.01235846 0.02045691 94 -0.604121  0.5472
-Drugconditionplacebo               0.00810745 0.02062257 94  0.393135  0.6951
-FamiliarityU:Drugconditionplacebo -0.01568321 0.02893084 94 -0.542093  0.5890
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.691              
-Drugconditionplacebo              -0.686  0.504       
-FamiliarityU:Drugconditionplacebo  0.489 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.0567068 -0.6743870 -0.3585553  0.2244457  3.6624336 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit7)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC      BIC   logLik
-  -269.5932 -252.388 140.7966
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.04282398 0.07356941
-
-Fixed effects:  emo_sad ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.07079553 0.01525563 94  4.640616  0.0000
-FamiliarityU                      -0.01594704 0.01856390 94 -0.859035  0.3925
-Drugconditionplacebo              -0.03594316 0.01873125 94 -1.918887  0.0580
-FamiliarityU:Drugconditionplacebo  0.03745831 0.02625455 94  1.426736  0.1570
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.619              
-Drugconditionplacebo              -0.614  0.505       
-FamiliarityU:Drugconditionplacebo  0.438 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.4734592 -0.5663288 -0.3126884  0.3091479  4.3434391 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit8)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  417.9542 435.1594 -202.9771
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:   0.6727249 1.015177
-
-Fixed effects:  focuspast ~ Familiarity * Drugcondition 
-                                      Value Std.Error DF   t-value p-value
-(Intercept)                        4.816097 0.2181015 94 22.081910  0.0000
-FamiliarityU                       0.149964 0.2562035 94  0.585330  0.5597
-Drugconditionplacebo              -0.287110 0.2585578 94 -1.110428  0.2696
-FamiliarityU:Drugconditionplacebo  0.276201 0.3623460 94  0.762257  0.4478
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.598              
-Drugconditionplacebo              -0.593  0.505       
-FamiliarityU:Drugconditionplacebo  0.423 -0.707 -0.714
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--1.63766349 -0.61229116 -0.09172441  0.57408009  1.99806744 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit9)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  442.2929 459.4981 -215.1465
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:   0.8646638 1.079071
-
-Fixed effects:  focuspresent ~ Familiarity * Drugcondition 
-                                      Value Std.Error DF   t-value p-value
-(Intercept)                        7.331060 0.2473202 94 29.641975  0.0000
-FamiliarityU                      -0.403484 0.2723914 94 -1.481267  0.1419
-Drugconditionplacebo               0.155257 0.2749608 94  0.564653  0.5737
-FamiliarityU:Drugconditionplacebo -0.167076 0.3852442 94 -0.433687  0.6655
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.561              
-Drugconditionplacebo              -0.556  0.505       
-FamiliarityU:Drugconditionplacebo  0.397 -0.707 -0.714
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--2.19778052 -0.67880115  0.06064628  0.59243472  2.65899958 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(mlfit10)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  167.8772 185.0824 -77.93861
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.2372779 0.3937474
-
-Fixed effects:  focusfuture ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        1.0434699 0.08237287 94 12.667640  0.0000
-FamiliarityU                      -0.0816517 0.09935935 94 -0.821782  0.4133
-Drugconditionplacebo              -0.0350795 0.10025976 94 -0.349886  0.7272
-FamiliarityU:Drugconditionplacebo  0.0944734 0.14052221 94  0.672302  0.5030
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.614              
-Drugconditionplacebo              -0.609  0.505       
-FamiliarityU:Drugconditionplacebo  0.434 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--1.88771283 -0.72137208 -0.08530682  0.53294660  2.93903489 
-
-Number of Observations: 130
-Number of Groups: 33 
-\end{verbatim}
+While MDMA showed slightly lower mean authenticity scores than placebo
+()vs.59.6), the considerable overlap in distributions and high
+variability (SDs = 20.96 for MDMA, and for Placebo) suggests individual
+experiences varied widely, with some participants potentially
+experiencing profound authenticity increases while others experienced
+decreases. Similarly, the modest elevation in emotional response under
+MDMA (1.33vs.) likely masks significant individual variation in
+emotional experiences (SDs = 0.51 for MDMA, and for Placebo). Perhaps
+most intriguing is the counterintuitive relationship between familiarity
+and both measures, where unfamiliar stimuli consistently elicited
+stronger responses across both conditions, hinting at complex
+interactions between novelty, drug effects, and subjective experience.
+These patterns underscore how pharmacological interventions like MDMA
+may not produce uniform effects across individuals, but rather interact
+with personal factors and contextual elements in ways that traditional
+statistical averages may not fully capture.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}

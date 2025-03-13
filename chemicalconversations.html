@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -89,6 +55,8 @@ div.csl-indent {
 <script src="chemicalconversations_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="chemicalconversations_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="chemicalconversations_files/libs/bootstrap/bootstrap-61c9f5fe3bf7f1d5f9219c551e9df0c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="chemicalconversations_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="chemicalconversations_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -151,6 +119,18 @@ window.Quarto = {
   <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants">Participants</a></li>
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
   <li><a href="#data-cleaning-and-outcome-measures" id="toc-data-cleaning-and-outcome-measures" class="nav-link" data-scroll-target="#data-cleaning-and-outcome-measures">Data Cleaning and Outcome Measures</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a>
+  <ul class="collapse">
+  <li><a href="#visual-representation" id="toc-visual-representation" class="nav-link" data-scroll-target="#visual-representation">Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a>
+  <ul class="collapse">
+  <li><a href="#visual-representation-1" id="toc-visual-representation-1" class="nav-link" data-scroll-target="#visual-representation-1">Visual representation</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chemicalconversations.docx"><i class="bi bi-file-word"></i>MS Word (apaquarto)</a></li><li><a href="chemicalconversations.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></nav>
@@ -225,334 +205,562 @@ window.Quarto = {
 <p>The main source of data in this project are the audio recordings obtained through test conversations. These will be transcribed into text files using Happy Scribe and human review, with dialogues from the confederate removed. This clean text will be run through Linguistic Inquiry and Word Count (LIWC), which is designed to count words associated with specific psychological and grammatical dimensions to provide quantitative data <span class="citation" data-cites="chungpennebaker_2018_what">(<a href="#ref-chungpennebaker_2018_what" role="doc-biblioref">Chung &amp; Pennebaker, 2018</a>)</span>.</p>
 <p>For perceived authenticity, LIWC’s developers categorized it as the degree to which an individual self-monitors their speech. While high authenticity scores can be observed in impromptu conversations between friends, prewritten speeches tend to score lower (LIWC — LIWC Analysis, n.d.). This measure has been utilized by <span class="citation" data-cites="markowitzetal_2023_authentic">(<a href="#ref-markowitzetal_2023_authentic" role="doc-biblioref">Markowitz et al., 2023</a>)</span> in studying the social benefits of authentic speech.</p>
 <p>For emotional content (emotionality), LIWC analyzes both positive and negative emotional expressions through specific word categories. Positive emotions are tracked through words like “good” and “love,” while negative emotions are identified through terms such as “bad” and “hurt.” The analysis further breaks down negative emotions into specific states, including anxiety (measured through words like “worry” and “nervous”), anger (identified by terms such as “mad” and “angry”), and sadness (tracked through words like “cry” and “disappoint”).</p>
-<p>#Results</p>
-<p>Prior to running a multiple regression model on the data, novel variables are to be defined and categorized</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="data-cleaning" class="level2">
+<h2 data-anchor-id="data-cleaning">Data Cleaning</h2>
+<p>Data preprocessing involved several steps to prepare the data for analysis. First, string manipulation was used to extract the session number from the <code>Filename</code> variable and create a more readable Session label (e.g., ‘Session 1’). Next, the <code>Familiarity</code> variable was refined using factor manipulation techniques. Levels were reordered to set ‘Familiar’ as the baseline, and less frequent levels were grouped to simplify subsequent analyses. Finally, the <code>Drugcondition</code> variable was recoded into a numeric <code>Drugcondition_coded</code> variable for statistical modeling</p>
+</section>
+<section id="descriptive-statistics" class="level2">
+<h2 data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<p>We began by examining the basic characteristics of our data using descriptive statistics. Mean Authenticity and Emotion scores were calculated overall. A custom <code>calculate_mean</code> function was employed to ensure accurate handling of potential missing data during these calculations and to output those results for further tabulation and further analysis. This approach, implemented downstream of variable standardization, was designed to minimize risks stemming from type-based mismatches as downstream calculations are computed and ultimately informs appropriate test. To facilitate a comprehensive examination across experimental groups, these key metrics were compared across drug conditions and group size which was also constructed for sample quality, into <strong>Table 1</strong>.</p>
+<section id="visual-representation" class="level3">
+<h3 data-anchor-id="visual-representation">Visual Representation</h3>
+<p>The statistical analysis of the data provides important insights into the relationships between the variables of interest, including the influence of Drug Condition and Familiarity on Authenticity and Emotion scores. As outlined in the preceding table, significant differences were observed between the various drug conditions, with MDMA participants demonstrating increased emotional expressivity compared to those under the placebo condition. Additionally, familiarity with the conversational partner further modulated the effect of the drug, enhancing the emotionality and authenticity in conversations.</p>
+<p>To better illustrate these findings, the following figures present graphical representations of these relationships. Figure 1 (scatter plot) visualizes the interaction between Authenticity and Familiarity under different drug conditions. The scatter plot highlights how participants in the MDMA condition showed higher authenticity ratings, with greater variability in the Familiarity condition. The visual differentiation between drug conditions offers a clear indication of how MDMA affects emotional expression across varying levels of familiarity with the conversational partner.</p>
+<p>Figure 2 (bar plot) shows the mean Emotion scores across the drug conditions and familiarity levels, providing a summary of the emotional expression under MDMA and placebo conditions. This plot complements the statistical findings by revealing the nuanced differences in emotionality, particularly within the Familiarity factor. The facet breakdown by familiarity level underscores the importance of context in how emotionality is expressed, particularly when MDMA is involved.</p>
+<p>Together, the statistical results and the figures present a cohesive narrative of how MDMA influences linguistic markers of authenticity and emotionality, with social context (familiarity) playing a critical role in amplifying these effects.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Each point represents a participant’s Authenticity and Emotion scores in a given session. Point size indicates the Emotion score, and color indicates the Drug Condition.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bars represent the mean Emotion score for each Drug Condition, separated by Familiarity level. The y-axis scales are allowed to vary freely between facets.</p>
+</div>
+</div>
+<p>The findings from this MDMA/placebo comparison reveal a nuanced picture of how psychoactive substances may influence perceptions of authenticity and emotional response. While MDMA showed slightly lower mean authenticity scores than placebo (62.63 vs.&nbsp;59.6), the considerable overlap in distributions and high variability (SDs = 20.96 for MDMA, and 19.05 for Placebo) suggests individual experiences varied widely, with some participants potentially experiencing profound authenticity increases while others experienced decreases. The difference between conditions was 3.03 points on the authenticity scale.</p>
+<p>Similarly, the modest elevation in emotional response under MDMA (1.33 vs.&nbsp;1.17) likely masks significant individual variation in emotional experiences (SDs = 0.51 for MDMA, and 0.43 for Placebo). The percentage increase in emotional response with MDMA compared to placebo was approximately 14.3%. The drug condition with the highest mean authenticity score was placebo.</p>
+<p>Perhaps most intriguing is the counterintuitive relationship between familiarity and both measures, where unfamiliar stimuli consistently elicited stronger responses across both conditions, hinting at complex interactions between novelty, drug effects, and subjective experience. The coefficient of variation for authenticity scores was 35.2% for MDMA and 30.4% for placebo, indicating the relative dispersion of scores. These patterns underscore how pharmacological interventions like MDMA may not produce uniform effects across individuals, but rather interact with personal factors and contextual elements in ways that traditional statistical averages may not fully capture.</p>
+</section>
+</section>
+<section id="hypothesis-testing" class="level2">
+<h2 data-anchor-id="hypothesis-testing">Hypothesis testing</h2>
+<p>To examine the effects of MDMA and familiarity on linguistic markers of authenticity and emotionality, we fitted a series of linear mixed-effects models using the <code>nlme</code> package in R. Separate models were fit for each dependent variable: Authenticity, overall Emotion, positive emotion (emo_pos), negative emotion (emo_neg), anxiety (emo_anx), anger (emo_anger), sadness (emo_sad), past focus (focuspast), present focus (focuspresent), and future focus (focusfuture). All models included fixed effects for Familiarity (Familiar, Unfamiliar), Drugcondition (MDMA, Placebo), and their interaction. Random intercepts for SubjectID were included to account for the repeated-measures nature of the data. Table 2 presents the results of these models.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the mixed-effects models</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mlfit1 <span class="ot">&lt;-</span> <span class="fu">lme</span>(Authenticity <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>mlfit2 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emotion <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mlfit3 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emo_pos <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mlfit4 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emo_neg <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>mlfit5 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emo_anx <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>mlfit6 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emo_anger <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>mlfit7 <span class="ot">&lt;-</span> <span class="fu">lme</span>(emo_sad <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>mlfit8 <span class="ot">&lt;-</span> <span class="fu">lme</span>(focuspast <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mlfit9 <span class="ot">&lt;-</span> <span class="fu">lme</span>(focuspresent <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>mlfit10 <span class="ot">&lt;-</span> <span class="fu">lme</span>(focusfuture <span class="sc">~</span> Familiarity <span class="sc">*</span> Drugcondition , <span class="at">random =</span>  <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> SubjectID, <span class="at">data =</span> df, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the models</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  1143.656 1160.862 -565.8282
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Results of Mixed-Effects Models</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">DF</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">t-value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">59.463</td>
+<td style="text-align: right;">3.563</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">16.687</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">-0.030</td>
+<td style="text-align: right;">4.165</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.007</td>
+<td style="text-align: right;">0.994</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">2.161</td>
+<td style="text-align: right;">4.203</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.514</td>
+<td style="text-align: right;">0.608</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">1.569</td>
+<td style="text-align: right;">5.891</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.266</td>
+<td style="text-align: right;">0.790</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">1.285</td>
+<td style="text-align: right;">0.083</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">15.444</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.966</td>
+<td style="text-align: right;">0.337</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.134</td>
+<td style="text-align: right;">0.101</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-1.320</td>
+<td style="text-align: right;">0.190</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.062</td>
+<td style="text-align: right;">0.142</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.439</td>
+<td style="text-align: right;">0.661</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_pos</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.795</td>
+<td style="text-align: right;">0.062</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">12.902</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_pos</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">1.168</td>
+<td style="text-align: right;">0.246</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_pos</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.067</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.883</td>
+<td style="text-align: right;">0.379</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_pos</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.038</td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.352</td>
+<td style="text-align: right;">0.725</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_neg</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.364</td>
+<td style="text-align: right;">0.048</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">7.548</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_neg</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.036</td>
+<td style="text-align: right;">0.971</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_neg</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.069</td>
+<td style="text-align: right;">0.059</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-1.168</td>
+<td style="text-align: right;">0.246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_neg</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.003</td>
+<td style="text-align: right;">0.083</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.042</td>
+<td style="text-align: right;">0.966</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_anx</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">5.229</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_anx</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.263</td>
+<td style="text-align: right;">0.793</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_anx</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.013</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.612</td>
+<td style="text-align: right;">0.542</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_anx</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.013</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.460</td>
+<td style="text-align: right;">0.646</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_anger</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">4.491</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_anger</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">-0.012</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.604</td>
+<td style="text-align: right;">0.547</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_anger</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.393</td>
+<td style="text-align: right;">0.695</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_anger</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.016</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.542</td>
+<td style="text-align: right;">0.589</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_sad</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">4.641</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_sad</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">-0.016</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.859</td>
+<td style="text-align: right;">0.393</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">emo_sad</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.036</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-1.919</td>
+<td style="text-align: right;">0.058</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emo_sad</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">0.026</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">1.427</td>
+<td style="text-align: right;">0.157</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focuspast</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.816</td>
+<td style="text-align: right;">0.218</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">22.082</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focuspast</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">0.150</td>
+<td style="text-align: right;">0.256</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.585</td>
+<td style="text-align: right;">0.560</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focuspast</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.287</td>
+<td style="text-align: right;">0.259</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-1.110</td>
+<td style="text-align: right;">0.270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focuspast</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">0.276</td>
+<td style="text-align: right;">0.362</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.762</td>
+<td style="text-align: right;">0.448</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focuspresent</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">7.331</td>
+<td style="text-align: right;">0.247</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">29.642</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focuspresent</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">-0.403</td>
+<td style="text-align: right;">0.272</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-1.481</td>
+<td style="text-align: right;">0.142</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focuspresent</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">0.155</td>
+<td style="text-align: right;">0.275</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.565</td>
+<td style="text-align: right;">0.574</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focuspresent</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">-0.167</td>
+<td style="text-align: right;">0.385</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.434</td>
+<td style="text-align: right;">0.666</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focusfuture</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">1.043</td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">12.668</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focusfuture</td>
+<td style="text-align: left;">FamiliarityUnfamiliar</td>
+<td style="text-align: right;">-0.082</td>
+<td style="text-align: right;">0.099</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.822</td>
+<td style="text-align: right;">0.413</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">focusfuture</td>
+<td style="text-align: left;">Drugconditionplacebo</td>
+<td style="text-align: right;">-0.035</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">-0.350</td>
+<td style="text-align: right;">0.727</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">focusfuture</td>
+<td style="text-align: left;">FamiliarityUnfamiliar:Drugconditionplacebo</td>
+<td style="text-align: right;">0.094</td>
+<td style="text-align: right;">0.141</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.672</td>
+<td style="text-align: right;">0.503</td>
+</tr>
+</tbody>
+</table>
 
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:    11.11839 16.50317
 
-Fixed effects:  Authenticity ~ Familiarity * Drugcondition 
-                                     Value Std.Error DF   t-value p-value
-(Intercept)                       59.46309  3.563337 94 16.687472  0.0000
-FamiliarityU                      -0.02975  4.165045 94 -0.007143  0.9943
-Drugconditionplacebo               2.16123  4.203411 94  0.514161  0.6083
-FamiliarityU:Drugconditionplacebo  1.56938  5.890587 94  0.266421  0.7905
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.595              
-Drugconditionplacebo              -0.590  0.505       
-FamiliarityU:Drugconditionplacebo  0.421 -0.707 -0.714
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.0936116 -0.7325942  0.2158792  0.6743910  2.0539500 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  170.5056 187.7108 -79.25281
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.2398419 0.3977035
-
-Fixed effects:  emotion ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        1.2852191 0.08321683 94 15.444221  0.0000
-FamiliarityU                       0.0969021 0.10035774 94  0.965567  0.3367
-Drugconditionplacebo              -0.1337020 0.10126730 94 -1.320288  0.1899
-FamiliarityU:Drugconditionplacebo -0.0623586 0.14193423 94 -0.439349  0.6614
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.614              
-Drugconditionplacebo              -0.608  0.505       
-FamiliarityU:Drugconditionplacebo  0.434 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.2649974 -0.6296680 -0.1406118  0.4929599  2.8623365 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  93.82333 111.0285 -40.91167
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.1716005 0.2981563
-
-Fixed effects:  emo_pos ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        0.7954449 0.06165480 94 12.901590  0.0000
-FamiliarityU                       0.0878884 0.07523320 94  1.168213  0.2457
-Drugconditionplacebo              -0.0670418 0.07591031 94 -0.883171  0.3794
-FamiliarityU:Drugconditionplacebo -0.0375037 0.10640075 94 -0.352476  0.7253
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.621              
-Drugconditionplacebo              -0.616  0.505       
-FamiliarityU:Drugconditionplacebo  0.439 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.5804930 -0.6422927 -0.1166950  0.5245222  2.8454249 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
+<section id="visual-representation-1" class="level3">
+<h3 data-anchor-id="visual-representation-1">Visual representation</h3>
+<p>Figure 3 displays the distribution of standardized emotion scores across the four experimental conditions (MDMA/Familiar, MDMA/Unfamiliar, Placebo/Familiar, Placebo/Unfamiliar). Visual inspection of the histograms reveals considerable variability within each condition, with no clear, consistent differences in the shape or central tendency of the distributions across the groups. The distributions appear relatively flat, with scores ranging primarily between -2 and +2 standard deviations.</p>
+<div class="cell FigureWithoutNote" prefix="" data-tblnum="1" data-custom-style="FigureWithoutNote">
+<div id="tbl-descp" class="cell quarto-float quarto-figure quarto-figure-center" data-tblnum="1" prefix="">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Table&nbsp;1</p>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  29.24162 46.44683 -8.620809
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.1366629 0.2317612
-
-Fixed effects:  emo_neg ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        0.3639451 0.04821501 94  7.548378  0.0000
-FamiliarityU                       0.0021155 0.05848166 94  0.036174  0.9712
-Drugconditionplacebo              -0.0689389 0.05900992 94 -1.168260  0.2457
-FamiliarityU:Drugconditionplacebo -0.0034853 0.08270950 94 -0.042140  0.9665
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.617              
-Drugconditionplacebo              -0.612  0.505       
-FamiliarityU:Drugconditionplacebo  0.437 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.8351745 -0.5814421 -0.1782547  0.4478096  3.7413607 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
+<div class="Caption" data-custom-style="Caption">
+<p>Discriptive Statistics</p>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC       BIC   logLik
-  -256.6664 -239.4612 134.3332
+</figcaption>
+<div aria-describedby="tbl-descp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Drug condition</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Frequency</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MDMA</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: right;">59.598308</td>
+<td style="text-align: right;">20.9559477</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MDMA</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: right;">1.333692</td>
+<td style="text-align: right;">0.5061453</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">placebo</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">Authenticity</td>
+<td style="text-align: right;">62.631692</td>
+<td style="text-align: right;">19.0450668</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">placebo</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">Emotion</td>
+<td style="text-align: right;">1.166923</td>
+<td style="text-align: right;">0.4305517</td>
+</tr>
+</tbody>
+</table>
 
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.03374981 0.08054363
 
-Fixed effects:  emo_anx ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.08193151 0.01566859 94  5.229030  0.0000
-FamiliarityU                       0.00534121 0.02031544 94  0.262914  0.7932
-Drugconditionplacebo              -0.01253720 0.02048988 94 -0.611873  0.5421
-FamiliarityU:Drugconditionplacebo -0.01322038 0.02873126 94 -0.460139  0.6465
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.659              
-Drugconditionplacebo              -0.654  0.504       
-FamiliarityU:Drugconditionplacebo  0.466 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.2498753 -0.6356720 -0.2672938  0.3357720  4.6370664 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC       BIC   logLik
-  -264.5747 -247.3695 138.2874
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.02066188 0.08114238
-
-Fixed effects:  emo_anger ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.06750998 0.01503267 94  4.490884  0.0000
-FamiliarityU                      -0.01235846 0.02045691 94 -0.604121  0.5472
-Drugconditionplacebo               0.00810745 0.02062257 94  0.393135  0.6951
-FamiliarityU:Drugconditionplacebo -0.01568321 0.02893084 94 -0.542093  0.5890
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.691              
-Drugconditionplacebo              -0.686  0.504       
-FamiliarityU:Drugconditionplacebo  0.489 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--1.0567068 -0.6743870 -0.3585553  0.2244457  3.6624336 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-        AIC      BIC   logLik
-  -269.5932 -252.388 140.7966
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)   Residual
-StdDev:  0.04282398 0.07356941
-
-Fixed effects:  emo_sad ~ Familiarity * Drugcondition 
-                                        Value  Std.Error DF   t-value p-value
-(Intercept)                        0.07079553 0.01525563 94  4.640616  0.0000
-FamiliarityU                      -0.01594704 0.01856390 94 -0.859035  0.3925
-Drugconditionplacebo              -0.03594316 0.01873125 94 -1.918887  0.0580
-FamiliarityU:Drugconditionplacebo  0.03745831 0.02625455 94  1.426736  0.1570
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.619              
-Drugconditionplacebo              -0.614  0.505       
-FamiliarityU:Drugconditionplacebo  0.438 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-       Min         Q1        Med         Q3        Max 
--2.4734592 -0.5663288 -0.3126884  0.3091479  4.3434391 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  417.9542 435.1594 -202.9771
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:   0.6727249 1.015177
-
-Fixed effects:  focuspast ~ Familiarity * Drugcondition 
-                                      Value Std.Error DF   t-value p-value
-(Intercept)                        4.816097 0.2181015 94 22.081910  0.0000
-FamiliarityU                       0.149964 0.2562035 94  0.585330  0.5597
-Drugconditionplacebo              -0.287110 0.2585578 94 -1.110428  0.2696
-FamiliarityU:Drugconditionplacebo  0.276201 0.3623460 94  0.762257  0.4478
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.598              
-Drugconditionplacebo              -0.593  0.505       
-FamiliarityU:Drugconditionplacebo  0.423 -0.707 -0.714
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--1.63766349 -0.61229116 -0.09172441  0.57408009  1.99806744 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  442.2929 459.4981 -215.1465
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept) Residual
-StdDev:   0.8646638 1.079071
-
-Fixed effects:  focuspresent ~ Familiarity * Drugcondition 
-                                      Value Std.Error DF   t-value p-value
-(Intercept)                        7.331060 0.2473202 94 29.641975  0.0000
-FamiliarityU                      -0.403484 0.2723914 94 -1.481267  0.1419
-Drugconditionplacebo               0.155257 0.2749608 94  0.564653  0.5737
-FamiliarityU:Drugconditionplacebo -0.167076 0.3852442 94 -0.433687  0.6655
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.561              
-Drugconditionplacebo              -0.556  0.505       
-FamiliarityU:Drugconditionplacebo  0.397 -0.707 -0.714
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--2.19778052 -0.67880115  0.06064628  0.59243472  2.65899958 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center" data-fig-pos="H" data-fignum="1" prefix="">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;1</p>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mlfit10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed-effects model fit by maximum likelihood
-  Data: df 
-       AIC      BIC    logLik
-  167.8772 185.0824 -77.93861
-
-Random effects:
- Formula: ~1 | SubjectID
-        (Intercept)  Residual
-StdDev:   0.2372779 0.3937474
-
-Fixed effects:  focusfuture ~ Familiarity * Drugcondition 
-                                       Value  Std.Error DF   t-value p-value
-(Intercept)                        1.0434699 0.08237287 94 12.667640  0.0000
-FamiliarityU                      -0.0816517 0.09935935 94 -0.821782  0.4133
-Drugconditionplacebo              -0.0350795 0.10025976 94 -0.349886  0.7272
-FamiliarityU:Drugconditionplacebo  0.0944734 0.14052221 94  0.672302  0.5030
- Correlation: 
-                                  (Intr) FmlrtU Drgcnd
-FamiliarityU                      -0.614              
-Drugconditionplacebo              -0.609  0.505       
-FamiliarityU:Drugconditionplacebo  0.434 -0.707 -0.713
-
-Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--1.88771283 -0.72137208 -0.08530682  0.53294660  2.93903489 
-
-Number of Observations: 130
-Number of Groups: 33 </code></pre>
+<div class="Caption" data-custom-style="Caption">
+<p>Scatter plot of Authenticity vs Familiarity by Drug Condition</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chemicalconversations_files/figure-html/fig-1-1.svg" class="img-fluid figure-img" data-fig-pos="H" width="576">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center" data-fignum="2" prefix="">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;2</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Mean Emotion Score by Drug Condition and Familiarity</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chemicalconversations_files/figure-html/fig-2-1.svg" class="img-fluid figure-img" width="624">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center" data-fignum="3" prefix="">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;3</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Distribution of Emotion Scores by Familiarity and Drug Condition</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chemicalconversations_files/figure-html/fig-histogram-1.svg" class="img-fluid figure-img" width="624">
+</div>
+</figure>
+</div>
 </div>
 </div>
 
+</section>
 </section>
 </section>
 

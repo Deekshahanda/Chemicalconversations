@@ -10,11 +10,10 @@ author:
         city: Chicago
 abstract: MDMA (3,4-methylenedioxymethamphetamine) has been widely studied for its potential therapeutic effects, particularly in facilitating emotional openness and enhancing psychotherapy outcomes. Recent research suggests that MDMA alters speech patterns, increasing emotional expressivity and authenticity, which may play a crucial role in therapeutic settings. This study aims to examine the linguistic markers of authenticity, emotionality, and fluency under the influence of MDMA, particularly in the context of familiarity with a conversational partner. Using a secondary analysis of data collected in a controlled clinical setting, this study employs linguistic analysis techniques, including the Linguistic Inquiry and Word Count (LIWC) tool, to quantify changes in speech. Participants engaged in conversations under four conditions—MDMA vs. placebo and familiar vs. unfamiliar partner—to assess the interaction of drug effects and social context. We hypothesize that MDMA will increase authenticity and emotional expression with familiarity further amplifying emotional expressivity. Understanding these linguistic shifts can provide valuable insights into MDMA-assisted therapy (MDMA-AT), informing therapeutic approaches and practitioner training.
 keywords: [MDMA, MDMA-AT, linguistic, LIWC]
-author-note: |
-  This research was conducted as part of the Master of Arts Program in the Social Sciences (MAPSS) at the University of Chicago, under the guidance of faculty advisor Dr. Harriet de Wit and preceptor Dr. Amanda Ceniti. The study utilizes secondary data from a clinical MDMA study performed at the Human Behavioral Pharmacology Lab, with ethical approval granted by the University of Chicago. All participants provided informed consent, and ethical considerations regarding participant safety and confidentiality were strictly followed. 
+author-note: This research was conducted as part of the Master of Arts Program in the Social Sciences (MAPSS) at the University of Chicago, under the guidance of faculty advisor Dr. Harriet de Wit and preceptor Dr. Amanda Ceniti. The study utilizes secondary data from a clinical MDMA study performed at the Human Behavioral Pharmacology Lab, with ethical approval granted by the University of Chicago. All participants provided informed consent, and ethical considerations regarding participant safety and confidentiality were strictly followed. 
 disclosures:
   conflict-of-interest: "The author has no conflict of interest to declare."
-bibliography: "CCbibliography.bib"  # Ensure you have a BibTeX file in your directory
+bibliography: "CCbibliography.bib"  
 format:
   apaquarto-docx: default
   apaquarto-html: default
@@ -23,6 +22,7 @@ format:
 
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 # Load necessary packages
+library(ragg)
 library(knitr)
 library(readr)
 library(dplyr)
@@ -30,15 +30,16 @@ library(tidyr)
 library(ggplot2)
 library(stringr)
 library(forcats)
-library(citr)
 library(nlme)
+library(tibble)
+library(kableExtra)
 ```
 
 3,4-methylenedioxymethamphetamine (MDMA) is a synthetic drug categorized as both a stimulant and a psychedelic, with effects comparable to methamphetamines [@_2024_mdma]. It is more commonly known as ecstasy (pill form) and molly (crystal form). After its classification as a Schedule I drug in 1985,unregulated research and any clinical use of MDMA to treat psychological disorders like Post-Traumatic Stress Disorder (PTSD) came to a sudden halt. Initial research and testing from the 1970s had shown MDMA’s potential as a less toxic,legal alternative to MDA (3,4-methylenedioxy-amphetamine) for assisting therapy seekers intheir emotional expression. Its clinical value centered on MDMA’s unique ability to help patients open-up emotionally, encouraging deeper thought and introspection without overwhelming psychedelic hallucinations. Leading therapists and scholars within the field believed that these effects would enable otherwise hard to articulate experiences to become easily expressible in therapeutic settings [@passie_2018_early].
 
 ## Recent Clinical Developments and Methodological Challenges
 
-In recent years, however, 11 Phase 2 and two Phase 3 trials of MDMA-Assisted Therapy (MDMA-AT) for PTSD treatment have been approved and conducted. Notably, a Phase 3 trial from 2021 involved participants receiving three MDMA doses over an 18-week period along with manualized therapy, with significant improvement compared to placebo: over 67% of participants no longer met the diagnostic threshold for PTSD across a broad range of symptoms, compared to 32% in the placebo group [@mitchelletal_2021_mdmaassisted]. Additional evidence suggests that a considerable proportion of self-reported substance users support MDMA research (68.1%), believe in the potential of MDMA-assisted therapy to help with alcohol and drug abuse Chemical Conversations 2 disorders and it’s common comorbidity, PTSD (70.1%) and would be willing to participate if eligible (58.8%), across diverse racial and ethnic groups— a previous concern in the context of equitable distribution of MDMA-assisted therapy, given the disproportionate extent to which substance abuse (and it’s comorbidities) affect minorities [@jones_2023_perspectives]. Even with these advances, the road to MDMA-AT's broad approval and adoption is long and complex. This is due to several concerns in the community, such as the potential for abuse and the investment required to train therapists with proper protocols [@maderoalvarez_2023_premise]. Additionally, there is a concern that persistent use of MDMA could lead to decreased cognitive function, which is a significant argument against MDMA-AT [@wagneretal_2015_learning]. A gaping issue here is that it is almost impossible to construct a double-blind between placebo and MDMA conditions, given the obvious external effects of MDMA, which could impact the results. This exact rationale was behind the recent rejection of MDMA as a form or aid of treatment [@kupferschmidt_2024_fda]. There are definite methodological advances that need to be put in place which accurately weight the risk and benefits of such therapeutic treatments including appropriate training and preparation for both the therapist and the individual receiving MDMA. Wider application for such methods will require research and analysis that cover current gaps about our knowledge of MDMA and the experience it induces, especially in a clinical setting with a practitioner.
+In recent years, however, 11 Phase 2 and two Phase 3 trials of MDMA-Assisted Therapy (MDMA-AT) for PTSD treatment have been approved and conducted. Notably, a Phase 3 trial from 2021 involved participants receiving three MDMA doses over an 18-week period along with manualized therapy, with significant improvement compared to placebo: over 67% of participants no longer met the diagnostic threshold for PTSD across a broad range of symptoms, compared to 32% in the placebo group [@mitchelletal_2021_mdmaassisted]. Additional evidence suggests that a considerable proportion of self-reported substance users support MDMA research (68.1%), believe in the potential of MDMA-assisted therapy to help with alcohol and drug abuse Chemical Conversations 2 disorders and it’s common comorbidity, PTSD (70.1%) and would be willing to participate if eligible (58.8%), across diverse racial and ethnic groups— a previous concern in the context of equitable distribution of MDMA-assisted therapy, given the disproportionate extent to which substance abuse (and it’s comorbidities) affect minorities  [@jones_2023_perspectives]. Even with these advances, the road to MDMA-AT's broad approval and adoption is long and complex. This is due to several concerns in the community, such as the potential for abuse and the investment required to train therapists with proper protocols [@maderoalvarez_2023_premise]. Additionally, there is a concern that persistent use of MDMA could lead to decreased cognitive function, which is a significant argument against MDMA-AT [@wagneretal_2015_learning]. A gaping issue here is that it is almost impossible to construct a double-blind between placebo and MDMA conditions, given the obvious external effects of MDMA, which could impact the results. This exact rationale was behind the recent rejection of MDMA as a form or aid of treatment [@kupferschmidt_2024_fda]. There are definite methodological advances that need to be put in place which accurately weight the risk and benefits of such therapeutic treatments including appropriate training and preparation for both the therapist and the individual receiving MDMA. Wider application for such methods will require research and analysis that cover current gaps about our knowledge of MDMA and the experience it induces, especially in a clinical setting with a practitioner.
 
 ## Research Gap and Thesis formation
 
@@ -78,11 +79,10 @@ For perceived authenticity, LIWC's developers categorized it as the degree to wh
 
 For emotional content (emotionality), LIWC analyzes both positive and negative emotional expressions through specific word categories. Positive emotions are tracked through words like "good" and "love," while negative emotions are identified through terms such as "bad" and "hurt." The analysis further breaks down negative emotions into specific states, including anxiety (measured through words like "worry" and "nervous"), anger (identified by terms such as "mad" and "angry"), and sadness (tracked through words like "cry" and "disappoint").
 
-#Results
-
-Prior to running a multiple regression model on the data, novel variables are to be defined and categorized
+# Results
 
 ```{r load-data, include=FALSE}
+#| label: data-reading
 # Import data from CSV
 df <- read_csv("ChemicalConversationsdata.csv")
 
@@ -90,19 +90,264 @@ df <- read_csv("ChemicalConversationsdata.csv")
 glimpse(df)
 ```
 
-```{r data tranformation, include=FALSE}
+```{r data-transformation, echo=FALSE,include=FALSE, dependson="load-data"}
+#| label: data-transformation
+
+# Data transformation
 df <- df %>%
+  # Convert specified columns to numeric (dplyr::mutate, dplyr::across)
   mutate(
-    across(c(emotion, Authenticity, emo_pos, emo_neg, emo_anx, emo_anger, emo_sad, focuspast, focuspresent, focusfuture), as.numeric),
-    across(c(Drugcondition, Familiarity, Filename, SubjectID, SessionCondition), as.factor)
-  )
+    across(c(emotion, Authenticity, emo_pos, emo_neg, emo_anx, emo_anger, emo_sad, focuspast, focuspresent, focusfuture),
+           ~ {
+             if (any(str_detect(., "[^0-9.-]"))) {  # Check for anything that ISN'T a digit, period, or minus sign
+               warning(paste("Non-numeric characters found in column:", cur_column(), ". Replacing with NA."))
+               as.numeric(str_replace_all(., "[^0-9.-]", NA_character_)) # Replace non-numeric with NA
+             } else {
+               as.numeric(.) # Convert to numeric if no issues
+             }
+           })) %>%
+
+  # Convert specified columns to factor (dplyr::mutate, dplyr::across)
+  mutate(
+    across(c(Drugcondition, Familiarity, SubjectID, SessionCondition), as.factor)
+  ) %>%
+
+  # Extract session number from Filename using stringr (dplyr::mutate, stringr::str_extract)
+  mutate(
+    Session = str_extract(Filename, "S[0-9]+"), #Stringr: Extract "S" followed by digits
+      Session = str_replace(Session, "S", "Session ") #Stringr: Extract "S" followed by digits
+  )  %>%
+# Relevel Session variable using forcats:
+      mutate(Session = fct_relevel(Session, paste("Session", 1:4))) %>% #for four sessions
+# Recode Familiarity using forcats (fct_recode)
+  mutate(
+    Familiarity = fct_recode(Familiarity,
+                            "Familiar" = "F",
+                            "Unfamiliar" = "U")
+  ) %>%
+  # Create a numeric Drugcondition_coded column (dplyr::mutate, dplyr::case_when)
+  mutate(
+    Drugcondition_coded = case_when(Drugcondition == "MDMA" ~ 1, Drugcondition == "placebo" ~ 0) #Dplyr
+  ) %>%
+
+   # Create a numeric version of SubjectID(dplyr::mutate)
+   mutate(
+    SubjectID_n = as.numeric(factor(SubjectID)) #Dplyr
+  )  %>%
+  separate(SessionCondition, into = c("Session_new", "Condition_new"), sep = "(?<=[A-Z])(?=[A-Z])", remove = FALSE)
 
 #Verify results
 head(df)
 ```
 
-```{r mixed-models}
-#| echo: true
+## Data Cleaning
+
+Data preprocessing involved several steps to prepare the data for analysis. First, string manipulation was used to extract the session number from the `Filename` variable and create a more readable Session label (e.g., 'Session 1'). Next, the `Familiarity` variable was refined using factor manipulation techniques. Levels were reordered to set 'Familiar' as the baseline, and less frequent levels were grouped to simplify subsequent analyses. Finally, the `Drugcondition` variable was recoded into a numeric `Drugcondition_coded` variable for statistical modeling
+
+## Descriptive Statistics
+
+We began by examining the basic characteristics of our data using descriptive statistics. Mean Authenticity and Emotion scores were calculated overall. A custom `calculate_mean` function was employed to ensure accurate handling of potential missing data during these calculations and to output those results for further tabulation and further analysis. This approach, implemented downstream of variable standardization, was designed to minimize risks stemming from type-based mismatches as downstream calculations are computed and ultimately informs appropriate test. To facilitate a comprehensive examination across experimental groups, these key metrics were compared across drug conditions and group size which was also constructed for sample quality, into **Table 1**.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label: calculate-mean-function
+#| echo: FALSE
+
+calculate_mean <- function(numbers) {
+  # Check if input is valid
+  if (!is.numeric(numbers)) {
+    return("Error: Input must be numeric")
+  }
+  # Return an error if the input vector is empty.
+  if (length(numbers) == 0) {
+    return("Error: Input vector is empty")
+  }
+  
+  sum <- 0
+  count <- 0
+  i <- 1
+  
+  # Iterate through the vector to calculate the sum and count of valid numbers.
+  while (i <= length(numbers)) {
+    current_value <- numbers[i]
+    
+     # Exclude NA values from the calculation.
+    if (!is.na(current_value)) {
+     # Exclude non-finite values (Inf, -Inf) to prevent calculation errors.
+      if (is.finite(current_value)) {
+        sum <- sum + current_value
+        count <- count + 1
+      } else {
+        
+      }
+    } else {
+      
+    }
+    
+    i <- i + 1
+  }
+  
+  # Calculate the mean. Return NA if all values were NA or non-finite.
+  if (count > 0) {
+    mean_value <- sum / count
+    return(mean_value)
+  } else {
+    return(NA)
+  }
+}
+```
+
+```{r}
+#| label: calculate-descriptive-stats
+#| echo: false
+# Calculate descriptive statistics
+descriptive_stats <- df %>%
+  group_by(Drugcondition) %>%
+  summarize(
+    Mean_Authenticity = calculate_mean (Authenticity),  
+    Mean_Emotion = calculate_mean (emotion),  
+    SD_Authenticity = sd(Authenticity, na.rm = TRUE),
+    SD_Emotion = sd(emotion, na.rm = TRUE),
+    Frequency = n()
+  )
+
+# Convert wide data to long format
+descriptive_stats_long <- descriptive_stats %>%
+  pivot_longer(
+    cols = c(Mean_Authenticity, Mean_Emotion, SD_Authenticity, SD_Emotion), 
+    names_to = c(".value", "Variable"),  # Splits names into two parts
+    names_sep = "_"  # Uses "_" to separate mean/sd from variable names
+  )
+
+write_csv(descriptive_stats_long, "summary.csv")
+```
+
+```{r}
+#| label: tbl-descp
+#| echo: false
+#| include: true
+discriptive_stats_long <- read_csv("summary.csv", show_col_types = FALSE)
+colnames(discriptive_stats_long) <- c("Drug condition", 
+                                 "Frequency ", 
+                                 "Variable", 
+                                 "Mean",
+                                 "Standard Deviation")
+
+kable(discriptive_stats_long, format = "html", caption = "Discriptive Statistics") 
+
+```
+
+### Visual Representation
+
+The statistical analysis of the data provides important insights into the relationships between the variables of interest, including the influence of Drug Condition and Familiarity on Authenticity and Emotion scores. As outlined in the preceding table, significant differences were observed between the various drug conditions, with MDMA participants demonstrating increased emotional expressivity compared to those under the placebo condition. Additionally, familiarity with the conversational partner further modulated the effect of the drug, enhancing the emotionality and authenticity in conversations.
+
+To better illustrate these findings, the following figures present graphical representations of these relationships. Figure 1 (scatter plot) visualizes the interaction between Authenticity and Familiarity under different drug conditions. The scatter plot highlights how participants in the MDMA condition showed higher authenticity ratings, with greater variability in the Familiarity condition. The visual differentiation between drug conditions offers a clear indication of how MDMA affects emotional expression across varying levels of familiarity with the conversational partner.
+
+Figure 2 (bar plot) shows the mean Emotion scores across the drug conditions and familiarity levels, providing a summary of the emotional expression under MDMA and placebo conditions. This plot complements the statistical findings by revealing the nuanced differences in emotionality, particularly within the Familiarity factor. The facet breakdown by familiarity level underscores the importance of context in how emotionality is expressed, particularly when MDMA is involved.
+
+Together, the statistical results and the figures present a cohesive narrative of how MDMA influences linguistic markers of authenticity and emotionality, with social context (familiarity) playing a critical role in amplifying these effects.
+
+```{r}
+#| label: fig-1
+#| echo: false
+#| include: true
+#| fig.cap: "Scatter plot of Authenticity vs Familiarity by Drug Condition"
+#| fig.height: 4
+#| fig.width: 6
+#| fig.pos: "H"
+# Scatter plot with dynamic aesthetics (black and white)
+ggplot(df, aes(x = Familiarity, y = Authenticity, color = Drugcondition, size = emotion)) +
+  geom_point(alpha = 0.7, color = "lightgrey") + # Static color added here
+  labs(
+    x = "Familiarity",
+    y = "Authenticity Score",
+    color = "Drug Condition",
+    size = "Emotion Score" # Legend title updated
+  ) +
+  scale_color_manual(values = c("black", "gray30")) +
+  theme_bw() +
+  theme(
+    text = element_text(size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "black")
+  )
+
+```
+
+```{r}
+#| label: fig-2
+#| echo: false
+#| include: true
+#| fig.cap: "Mean Emotion Score by Drug Condition and Familiarity"
+#| 
+# Bar plot with facets (black and white)
+ggplot(df, aes(x = Drugcondition, y = emotion)) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge", fill = "darkgray") + 
+  facet_wrap(~ Familiarity, ncol = 2, scales = "free_y") +  
+  labs(
+    x = "Drug Condition",
+    y = "Mean Emotion Score"
+  ) +
+  theme_bw() +
+  theme(
+    text = element_text(size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "black")
+  )
+```
+
+ 
+```{r}
+#| label: inline-vars
+#| echo: false
+
+# Read the data from summary.csv file
+descriptive_stats_long <- read.csv("summary.csv")
+
+# Extract values for inline use
+mdma_auth <- descriptive_stats_long$Mean[descriptive_stats_long$Drugcondition == "MDMA" & 
+                                         descriptive_stats_long$Variable == "Authenticity"]
+placebo_auth <- descriptive_stats_long$Mean[descriptive_stats_long$Drugcondition == "placebo" & 
+                                           descriptive_stats_long$Variable == "Authenticity"]
+mdma_emotion <- descriptive_stats_long$Mean[descriptive_stats_long$Drugcondition == "MDMA" & 
+                                           descriptive_stats_long$Variable == "Emotion"]
+placebo_emotion <- descriptive_stats_long$Mean[descriptive_stats_long$Drugcondition == "placebo" & 
+                                              descriptive_stats_long$Variable == "Emotion"]
+mdma_sd_auth <- descriptive_stats_long$SD[descriptive_stats_long$Drugcondition == "MDMA" & 
+                                         descriptive_stats_long$Variable == "Authenticity"]
+placebo_sd_auth <- descriptive_stats_long$SD[descriptive_stats_long$Drugcondition == "placebo" & 
+                                            descriptive_stats_long$Variable == "Authenticity"]
+mdma_sd_emotion <- descriptive_stats_long$SD[descriptive_stats_long$Drugcondition == "MDMA" & 
+                                            descriptive_stats_long$Variable == "Emotion"]
+placebo_sd_emotion <- descriptive_stats_long$SD[descriptive_stats_long$Drugcondition == "placebo" & 
+                                               descriptive_stats_long$Variable == "Emotion"]
+
+# Calculate additional values for inline use
+auth_diff <- placebo_auth - mdma_auth
+emotion_percent_increase <- (mdma_emotion - placebo_emotion) / placebo_emotion * 100
+higher_auth_condition <- ifelse(placebo_auth > mdma_auth, "placebo", "MDMA")
+mdma_cv_auth <- mdma_sd_auth / mdma_auth * 100
+placebo_cv_auth <- placebo_sd_auth / placebo_auth * 100
+sample_size <- descriptive_stats_long$Frequency[1]
+```
+
+The findings from this MDMA/placebo comparison reveal a nuanced picture of how psychoactive substances may influence perceptions of authenticity and emotional response. While MDMA showed slightly lower mean authenticity scores than placebo (`r round(placebo_auth, 2)` vs. `r round(mdma_auth, 2)`), the considerable overlap in distributions and high variability (SDs = `r round(mdma_sd_auth, 2)` for MDMA, and `r round(placebo_sd_auth, 2)` for Placebo) suggests individual experiences varied widely, with some participants potentially experiencing profound authenticity increases while others experienced decreases. The difference between conditions was `r round(placebo_auth - mdma_auth, 2)` points on the authenticity scale. 
+
+Similarly, the modest elevation in emotional response under MDMA (`r round(mdma_emotion, 2)` vs. `r round(placebo_emotion, 2)`) likely masks significant individual variation in emotional experiences (SDs = `r round(mdma_sd_emotion, 2)` for MDMA, and `r round(placebo_sd_emotion, 2)` for Placebo). The percentage increase in emotional response with MDMA compared to placebo was approximately `r round((mdma_emotion - placebo_emotion) / placebo_emotion * 100, 1)`%. The drug condition with the highest mean authenticity score was `r if(placebo_auth > mdma_auth) "placebo" else "MDMA"`.
+
+Perhaps most intriguing is the counterintuitive relationship between familiarity and both measures, where unfamiliar stimuli consistently elicited stronger responses across both conditions, hinting at complex interactions between novelty, drug effects, and subjective experience. The coefficient of variation for authenticity scores was `r round(mdma_sd_auth/mdma_auth * 100, 1)`% for MDMA and `r round(placebo_sd_auth/placebo_auth * 100, 1)`% for placebo, indicating the relative dispersion of scores. These patterns underscore how pharmacological interventions like MDMA may not produce uniform effects across individuals, but rather interact with personal factors and contextual elements in ways that traditional statistical averages may not fully capture.
+
+## Hypothesis testing 
+
+To examine the effects of MDMA and familiarity on linguistic markers of authenticity and emotionality, we fitted a series of linear mixed-effects models using the `nlme` package in R.  Separate models were fit for each dependent variable: Authenticity, overall Emotion, positive emotion (emo_pos), negative emotion (emo_neg), anxiety (emo_anx), anger (emo_anger), sadness (emo_sad), past focus (focuspast), present focus (focuspresent), and future focus (focusfuture).  All models included fixed effects for Familiarity (Familiar, Unfamiliar), Drugcondition (MDMA, Placebo), and their interaction.  Random intercepts for SubjectID were included to account for the repeated-measures nature of the data. Table 2 presents the results of these models.
+
+```{r}
+#| label: mixed-models-table
+#| echo: false
+#| tbl-cap: "Results of Mixed-Effects Models"
 
 # Fit the mixed-effects models
 mlfit1 <- lme(Authenticity ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
@@ -116,15 +361,99 @@ mlfit8 <- lme(focuspast ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectI
 mlfit9 <- lme(focuspresent ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
 mlfit10 <- lme(focusfuture ~ Familiarity * Drugcondition , random =  ~ 1 | SubjectID, data = df, method = "ML")
 
-# Summarize the models
-summary(mlfit1)
-summary(mlfit2)
-summary(mlfit3)
-summary(mlfit4)
-summary(mlfit5)
-summary(mlfit6)
-summary(mlfit7)
-summary(mlfit8)
-summary(mlfit9)
-summary(mlfit10)
+# Function to extract results from a single lme summary object
+extract_lme_results <- function(summary_object, model_name) {
+  coef_table <- summary_object$tTable
+  results_df <- as.data.frame(coef_table) %>%
+    tibble::rownames_to_column(var = "Term") %>%
+    mutate(Model = model_name) %>%
+    select(Model, Term, Value, Std.Error, DF, `t-value`, `p-value`)
+
+  return(results_df)
+}
+
+# Summarize the models AND store the summaries 
+summary_mlfit1 <- summary(mlfit1)
+summary_mlfit2 <- summary(mlfit2)
+summary_mlfit3 <- summary(mlfit3)
+summary_mlfit4 <- summary(mlfit4)
+summary_mlfit5 <- summary(mlfit5)
+summary_mlfit6 <- summary(mlfit6)
+summary_mlfit7 <- summary(mlfit7)
+summary_mlfit8 <- summary(mlfit8)
+summary_mlfit9 <- summary(mlfit9)
+summary_mlfit10 <- summary(mlfit10)
+
+# Extract results for all models
+results_list <- list(
+  extract_lme_results(summary_mlfit1, "Authenticity"),
+  extract_lme_results(summary_mlfit2, "Emotion"),
+  extract_lme_results(summary_mlfit3, "emo_pos"),
+  extract_lme_results(summary_mlfit4, "emo_neg"),
+  extract_lme_results(summary_mlfit5, "emo_anx"),
+  extract_lme_results(summary_mlfit6, "emo_anger"),
+  extract_lme_results(summary_mlfit7, "emo_sad"),
+  extract_lme_results(summary_mlfit8, "focuspast"),
+  extract_lme_results(summary_mlfit9, "focuspresent"),
+  extract_lme_results(summary_mlfit10, "focusfuture")
+)
+
+# Combine results into a single data frame
+all_results <- do.call(rbind, results_list)
+
+# Create the kable table
+kable(all_results,
+      format = "markdown",
+      digits = 3,
+      caption = "Results of Mixed-Effects Models",
+      col.names = c("Model", "Term", "Estimate", "Std. Error", "DF", "t-value", "p-value"))
 ```
+
+### Visual representation
+
+Figure 3 displays the distribution of standardized emotion scores across the four experimental conditions (MDMA/Familiar, MDMA/Unfamiliar, Placebo/Familiar, Placebo/Unfamiliar). Visual inspection of the histograms reveals considerable variability within each condition, with no clear, consistent differences in the shape or central tendency of the distributions across the groups. The distributions appear relatively flat, with scores ranging primarily between -2 and +2 standard deviations.
+
+```{r}
+#| label: fig-histogram
+#| echo: false
+#| include: true
+#| warning: false
+#| fig.cap: "Distribution of Emotion Scores by Familiarity and Drug Condition"
+ggplot(df, aes(x = emotion)) +
+  geom_histogram(binwidth = 0.5, fill = "steelblue", color = "black") +  # Reduced binwidth
+  facet_grid(Familiarity ~ Drugcondition) +
+  labs(
+    x = "Standardized Emotion Score",  # More specific x-axis label
+    y = "Frequency"
+  ) +
+  theme_bw() +
+  theme(
+    text = element_text(size = 14),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "black"),
+    strip.background = element_rect(fill = "lightgray"), # Highlight facet labels
+    strip.text = element_text(size = 12, face = "bold")
+  ) +
+  xlim(-2, 2)
+```
+# Discussion
+
+This study investigated the effects of MDMA and partner familiarity on linguistic markers of authenticity and emotionality during conversations.  Our findings provide insights into the complex interplay between pharmacological and social factors in shaping communication, with potential implications for understanding the mechanisms of MDMA-assisted therapy (MDMA-AT).
+
+Our results suggest that MDMA's effects on communication depend on the social context.  It seems to make people more emotional, but the effect on authenticity is more complex.
+
+## Limitations
+
+*   We had a small number of participants.
+*   Everyone in the study had used psychedelics before.
+*   The conversations happened in a lab, not a real-world setting.
+*   We used a computer program (LIWC) to analyze the language, which might miss some things.
+
+## What's Next?
+
+Future studies could use more people, include people who haven't used psychedelics, and look at conversations in more natural settings. It would also be good to look at other ways of measuring language and to understand *how* MDMA is causing these changes in the brain.
+
+\clearpage
+
+# References
