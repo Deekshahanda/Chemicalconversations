@@ -446,6 +446,6 @@ All final projects are graded by Dr. Dowling. You will see your grade on Canvas 
 
 **Comments:** 
 
-Sub1: Nice work, Deeksha! This sounds like a really cool project. It looks like everything you've been focusing on so far is coming together really nicely. There are a few points to fix up (I've noted above). I'm looking forward to seeing the final draft. :)
+
 
 
