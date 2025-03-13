@@ -12,7 +12,9 @@ MDMA (3,4-methylenedioxymethamphetamine) has been widely studied for its potenti
 ├── 📄 chemicalconversations.html
 ├── 📄 chemicalconversations.tex
 ├── 📄 chemicalconversations.log
+├── 📄 chemicalconversations.docx
 ├── 📄 research-assessment.md
+├── 📄 research-assessment 2.md
 ├── 📄 README.md
 ├── 📂 _extensions
 ├── 📂 extra files
