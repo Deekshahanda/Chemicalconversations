@@ -100,6 +100,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
         -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments: 
+            - Top-level of repo should contain only necessary files (typically the .qmd, .bib., this assessment, the rendered pdf, README, .gitignore); other files should be organized into subdirectories
 
 2.  Maintain an informative and up-to-date README.md
 
@@ -107,7 +108,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2.  Outlines the repo structure with file tree or similar
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments: 
 
 3.  integrate a GitHub repo with an R studio project, including .gitignore file
@@ -118,6 +119,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
         -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
+            - .gitignore should include (minimally) a localonly folder and pdf render files (e.g., the *_files folder, .ttt, .tex., .log, etc.), as well as comments describing the ignored items (in addition to the default ignored items if you’re using a template)
 
 4.  effectively use version control
 
@@ -125,7 +127,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2.  Relies on document revisions rather than manually created new versions
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### R programming
@@ -139,7 +141,9 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
         -   [x] Objective attempt
         -   [ ] Objective met
-        -   Grader comments:
+        -   Grader comments: 
+            - Use more than 1 function to install/require/load packages; functions that (may) install something on your reader’s machine should be commented out
+            - Refer to the d2mr resources page for a list of the packages you can load without a commented out install line.
         
 6.  Use arithmetic, comparison, and logical operators
 
@@ -147,7 +151,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses multiple operators in data transformation pipelines and/or inline R code
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 7.  Parse and define functions and arguments
@@ -157,7 +161,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Functions are well-documented with comments
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 8.  Parse and write conditional statements and/or loops
@@ -166,7 +170,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses multiple types of conditional/loop functions (e.g., `if_else()`, `case_when()`, `for`, `while`)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 
@@ -177,7 +181,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Uses only relative paths that run without error when repo is cloned
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 10. Use `dplyr` and `tidyr` functions to transform data
@@ -187,7 +191,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Combines `dplyr` and `tidyr` functions in a data transformation pipeline
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments: 
 
 11. Use `stringr` functions to work with string variables
@@ -196,7 +200,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. Uses `stringr` functions in a data transformation pipeline
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 12. Use `forcats` functions to work with factor variables
@@ -206,7 +210,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     - NOTE: Though they are base R functions, `factor()` and `levels()` can be used to meet this objective as long as they are used in a way that demonstrates the same skills as `forcats` functions, which should involve including optional arguments
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### Data visualization with ggplot2
@@ -217,7 +221,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     2. At least one plot is multi-variable
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 14. Use dynamic aesthetics to group data
@@ -225,7 +229,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1. Uses at least 2 unique data-mapped `aes()` arguments (e.g., color, shape, size) to group data in a plot in one or multiple plots
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 15. Use facets to create parallel plots
@@ -237,7 +241,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
       1. If data only includes 1 sensible grouping variable, it may be used for both the faceting and groupin aes.  
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 16. Create publication-quality plots using `theme` and `labs` layers
@@ -248,7 +252,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4. Uses at least 1 static aesthetic (e.g., color, shape, size) that improves visual clarity without mapping to data
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### Data analysis
@@ -261,7 +265,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     - NOTE: This objective may be met with only numeric or non-numeric summaries if they are sufficiently complex (at Dr. Dowling's discretion)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 18. Perform simple hypothesis testing analyses for multiple data types
@@ -272,7 +276,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     - NOTE: This objective may be met with only numeric or factor data analyses if they are sufficiently complex (at Dr. Dowling's discretion)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 19. Present and interpret statistics in manuscript narrative
@@ -283,7 +287,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4. Uses dynamic inline R code to render data-dependent text
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### BibTeX
@@ -295,7 +299,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. May use `cite_r()` to cite R and R packages
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments: 
 
 21. Render an APA7 references page from a .bib file
@@ -307,8 +311,9 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     5. May include references not cited in-text
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments: 
+            - you've got a few entries without dates and some capitalization issues, worth proofreading your bib file
 
 ### Notebooks and code chunks
 
@@ -320,8 +325,12 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4.  Chunks are distributed throughout the manuscript, sensibly placed near the text they support
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments: 
+            - I'd say you're pushing the limits of the 1-chunk-1-thing rule
+            - You might want to define functions in a sourced script rather than in chunks
+            - You've got a mix of header and comment style chunk options in a few places. I suspect something just got messed with in all the last minute troubleshooting, and everything still works. Go through and make sure everything is comment style.
+            - I see you're using the `fig.cap` option instead of `fig-cap` in some places. Make sure you use the one with the hyphen for Quarto files
         
 23. Use code chunks to set up a quarto document
 
@@ -331,7 +340,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     4. Organizes setup chunks sensibly
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 24. Render publication-quality tables, figures, and images from code chunks
@@ -346,6 +355,8 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
         -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
+            - No cross-referencing
+            - Some funky table formatting, and not everything in your tables is in plain English -- I'm only going to dock you a table-related point here because I know what a mess this is
 
 25. Execute descriptive and inferential analyses in code chunks
 
@@ -356,7 +367,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     5. Chunks are organized sensibly and appear near the text they support
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 ### R Markdown and Quarto
@@ -366,7 +377,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1. Includes all necessary metadata, output options, and formatting options necessary to render an APA styled document (or other specified style if appropriate for the project)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 27. Use quarto R Markdown to compose an academic manuscript
@@ -378,7 +389,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     - NOTE: This is going to be one of the most flexible objectives to demonstrate.  You need to demonstrate a range of markdown skills and use them to make a readable, informative manuscript. Hitting the four points above should do that, but you can use your judgment about what kind of markdown features will best serve your project. No matter what, you should use markdown to follow APA7 guidelines.
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 28. Use inline R variables to replace static text
@@ -388,7 +399,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     3. Ideally, uses inline R references for *all* data-dependent text
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
 
 29. Run inline R functions to render dynamic data-dependent text
@@ -396,7 +407,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     1. Uses inline R functions to render at least 3 unique data-dependent text outputs (e.g., performs rounding, calculates means, subtracts one list length from another, etc. -- inline rather than in a code chunk)
 
         -   [x] Objective attempt
-        -   [ ] Objective met
+        -   [x] Objective met
         -   Grader comments:
         
 30. Use `knitr` and quarto to produce an APA7 formatted 1-click PDF manuscript
@@ -409,6 +420,10 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
         -   [ ] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
+            - figures and tables not rendering in text; add floatsintext:true (though I know there's a lot more headache behind the scenes!)
+            - figures too large
+            - figures/tables need to be cross-referenced in text
+            - incomplete title page (including that issue here instead of in the YAML objective above, because it's pretty minor)
             
    
 
@@ -440,12 +455,15 @@ Alternatively/additionally in mind some of the suggested ways to earn engagement
 
 All final projects are graded by Dr. Dowling. You will see your grade on Canvas separated into two categories: objective points and engagement points.
 
--   **Objective points:** 10/30
--   **Engagement points:** 4/10
--   **Total points:** 14/40
+-   **Objective points:** 25/30
+-   **Engagement points:** 10/10
+-   **Total points:** 35/40
 
 **Comments:** 
 
+Deeksha, this is great work! I know you had a rough time right at the end, but from where I sit it looks like you really pulled it off. FWIW, the pdf renders without error on my computer. Seems like the issue is something local. Not great, but actually the preferable option if it's between that and something inexplicably wrong with your perfect-looking code, you know?
+
+Separately from the class skills, I just want to add that this is a really cool project. I'm a big language-only-exists-within-social-context person, and this is right up my alley. :)
 
 
 
